@@ -1,0 +1,24 @@
+{
+  "name": "@researchgate/node-package-blueprint",
+  "version": "0.1.0",
+  "description": "Blueprint for scaffolding new node packages",
+  "main": "lib/js/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/researchgate/node-package-blueprint.git"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "scaffold"
+  ],
+  "author": "Roland Loesslein <roland.loesslein@researchgate.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/researchgate/node-package-blueprint/issues"
+  },
+  "homepage": "https://github.com/researchgate/node-package-blueprint#readme"
+}
