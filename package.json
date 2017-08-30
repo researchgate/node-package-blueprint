@@ -16,16 +16,16 @@
     "clean:dist": "echo clean:dist",
     "clean:bin": "echo clean:bin",
     "coverage": "echo coverage",
-    "format": "echo format",
+    "format": "eslint --fix",
     "generate": "echo generate",
     "lint": "run-s lint:*",
     "lint:scss": "echo lint:scss",
     "lint:json": "echo lint:json",
-    "lint:js": "echo lint:js",
+    "lint:js": "eslint",
     "precommit": "run-s lint test",
     "prepare": "run-s clean generate build",
     "prepublishOnly": "run-s test",
-    "test": "echo test",
+    "test": "jest",
     "watch": "echo watch"
   },
   "repository": {
@@ -42,9 +42,13 @@
   "bugs": {
     "url": "https://github.com/researchgate/node-package-blueprint/issues"
   },
+  "homepage": "https://github.com/researchgate/node-package-blueprint#readme",
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.5.0",
+    "eslint-plugin-prettier": "^2.2.0",
     "husky": "^0.14.3",
-    "npm-run-all": "^4.1.1"
-  },
-  "homepage": "https://github.com/researchgate/node-package-blueprint#readme"
+    "npm-run-all": "^4.1.1",
+    "prettier": "^1.6.1"
+  }
 }
