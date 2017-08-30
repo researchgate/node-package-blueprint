@@ -1,6 +1,8 @@
 # node-package-blueprint
 Blueprint for scaffolding new node packages
 
+[![Build Status](https://travis-ci.org/researchgate/node-package-blueprint.svg?branch=master)](https://travis-ci.org/researchgate/node-package-blueprint)
+
 # Guidelines
 
 ### Build scripts
