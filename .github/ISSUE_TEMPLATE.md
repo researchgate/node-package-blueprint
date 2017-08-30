@@ -1,5 +1,5 @@
 Thanks for taking the time to file an issue with us.
-Please note that this issue tracker is used **ONLY** for reporting bugs.
+Please note that this issue template is used **ONLY** for reporting bugs.
 
 If you have an issue that isn’t a bug, please contact the project maintainer.
 
