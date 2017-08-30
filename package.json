@@ -6,7 +6,7 @@
   "scripts": {
     "build": "run-s build:*",
     "build:dist": "run-s build:dist:*",
-    "build:dist:css": "echo build:dist:css",
+    "build:dist:css": "node-sass ./src/scss --output ./dist/css",
     "build:lib": "run-s build:lib:*",
     "build:lib:js": "echo build:lib:js",
     "build:lib:es": "echo build:lib:es",
@@ -26,7 +26,8 @@
     "prepare": "run-s clean generate build",
     "prepublishOnly": "run-s test",
     "test": "jest",
-    "watch": "echo watch"
+    "watch": "run-p watch:*",
+    "watch:scss": "npm run build:dist:css -- --watch"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "eslint-plugin-prettier": "^2.2.0",
     "husky": "^0.14.3",
     "jest": "^20.0.4",
+    "node-sass": "^4.5.3",
     "npm-run-all": "^4.1.1",
     "prettier": "^1.6.1",
     "react": "^0.14.0 || ^15.0.0",
