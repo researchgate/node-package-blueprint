@@ -14,6 +14,9 @@ Runs a full build of all source files, binaries and complied bundles.
 #### `lint`
 Runs code linters for scss, js and json files.
 
+#### `format`
+Applies formatting rules to source files.
+
 #### `generate`
 Generates all necessary for a project to be built.
 

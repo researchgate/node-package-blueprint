@@ -17,6 +17,7 @@
     "clean:dist": "echo clean:dist",
     "clean:bin": "echo clean:bin",
     "coverage": "echo coverage",
+    "format": "echo format",
     "generate": "echo generate",
     "lint": "run-s lint:*",
     "lint:scss": "echo lint:scss",
