@@ -1,7 +1,26 @@
-# Node Package Blueprint
+The `docs/` folder contains all the documentation necessary for this project.
 
-This folder can be the right place to *read* the documentation if that's enough.
+## Documentation basics
 
-It can also be used to host files used to generate a project website, e.g. using Jekyll or other static generation tool.
+Each folder holding a `README.md` file will preview when navigating folders within this `Github` repository on your browser.
 
-If this folder contains the source code for the website. Choose a folder where the source would be generated and we can make it point to custom domain, e.g.: https://researchgate.github.io/node-package-blueprint/
+The best way to document is to keep a coherent folder structure where each section/chapter has its own folder.
+
+Each folder contains one file per topic regarding that folder level's documentation. This could be an example:
+
+```
+.
+└── docs
+    ├── README.md
+    └── docs
+        └── documenting-on-github.md
+
+```
+
+## Host documentation on Github Pages
+
+The documentation under `docs` and its sub-folders is accessible under  https://researchgate.github.io/node-package-blueprint/ thanks to Github Pages.
+
+There are different ways to configure the project to use Github pages.
+
+Read more about it on our docs section 📖&nbsp;&nbsp;[documenting-on-github](./docs/documenting-on-github.md).
