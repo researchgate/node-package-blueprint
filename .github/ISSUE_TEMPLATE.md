@@ -1,15 +1,15 @@
-Thank you for taking your time and considering filing an issue!
-Following issue tracker is used **ONLY** for reporting bugs.
+Thanks for taking the time to file an issue with us.
+Please note that this issue tracker is used **ONLY** for reporting bugs.
 
-Please contact the project maintainer about other issues that do not fall into this category.
+If you have an issue that isn’t a bug, please contact the project maintainer.
 
-## Expected Behavior
+## Expected behavior
 <!--- What should happen -->
 
-## Current Behavior
+## Current behavior
 <!--- What is happening instead of the expected behavior -->
 
-## Steps to Reproduce
+## Steps to reproduce
 <!--- Provide a link to a live example, a code snippet, or a set of steps to -->
 <!--- reproduce this bug. -->
 1.
@@ -17,7 +17,7 @@ Please contact the project maintainer about other issues that do not fall into t
 3.
 4.
 
-## Context (Environment)
+## Context (environment)
 <!--- Please provide technical context, as well as possible background -->
 <!--- information that can help us identify the problem -->
 
