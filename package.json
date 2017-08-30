@@ -21,7 +21,7 @@
     "generate": "echo generate",
     "lint": "run-s lint:*",
     "lint:scss": "stylelint --config .stylelintrc.js --syntax scss ./src/scss/**/*.scss",
-    "lint:json": "jsonlint-cli **/*.json",
+    "lint:json": "jsonlint-cli {**/*.json,.*rc}",
     "lint:js": "eslint {src}/.",
     "precommit": "run-s lint test",
     "prepare": "run-s clean generate build",
