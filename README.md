@@ -1,8 +1,7 @@
 # node-package-blueprint
 Blueprint for scaffolding new node packages
 
-
-
+# Guidelines
 
 ### Build scripts
 
@@ -31,3 +30,13 @@ Prepares a release of the package by running `clean`, `generate` and `build`
 
 #### `watch`
 Watch changes of source files and kicks of new builds.
+
+## Install
+Use `yarn` to install dependencies
+```yarn install```
+
+# Contribute
+
+## Publish
+Use `npm` to publish
+```npm publish```
