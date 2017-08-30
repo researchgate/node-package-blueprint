@@ -4,7 +4,28 @@
   "description": "Blueprint for scaffolding new node packages",
   "main": "lib/js/index.js",
   "scripts": {
-    "test": "test"
+    "build": "run-s build:*",
+    "build:bin": "echo build:bin",
+    "build:dist": "run-s build:dist:*",
+    "build:dist:css": "echo build:dist:css",
+    "build:lib": "run-s build:lib:*",
+    "build:lib:js": "echo build:lib:js",
+    "build:lib:es": "echo build:lib:es",
+    "build:lib:scss": "echo build:lib:scss",
+    "clean": "run-s clean:*",
+    "clean:build": "echo clean:build",
+    "clean:dist": "echo clean:dist",
+    "clean:bin": "echo clean:bin",
+    "coverage": "echo coverage",
+    "generate": "echo generate",
+    "lint": "run-s lint:*",
+    "lint:scss": "echo lint:scss",
+    "lint:json": "echo lint:json",
+    "lint:js": "echo lint:js",
+    "precommit": "run-s lint test",
+    "prepare": "run-s clean generate build",
+    "prepublishOnly": "run-s test",
+    "test": "echo test"
   },
   "repository": {
     "type": "git",
@@ -19,6 +40,10 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/researchgate/node-package-blueprint/issues"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "npm-run-all": "^4.1.1"
   },
   "homepage": "https://github.com/researchgate/node-package-blueprint#readme"
 }
