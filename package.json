@@ -25,7 +25,8 @@
     "precommit": "run-s lint test",
     "prepare": "run-s clean generate build",
     "prepublishOnly": "run-s test",
-    "test": "echo test"
+    "test": "echo test",
+    "watch": "echo watch"
   },
   "repository": {
     "type": "git",

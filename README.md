@@ -25,3 +25,6 @@ Runs all tests on source files
 
 #### `prepare`
 Prepares a release of the package by running `clean`, `generate` and `build`
+
+#### `watch`
+Watch changes of source files and kicks of new builds.
