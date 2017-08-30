@@ -190,7 +190,10 @@ array-reduce@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/array-reduce/-/array-reduce-0.0.0.tgz#173899d3ffd1c7d9383e4479525dbe278cab5f2b"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 <<<<<<< a2c2eda0d73da8c0fbdc5aaf997e525864005cf4
+=======
+>>>>>>> chore(watch): Add scss file watch task
 array-union@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/array-union/-/array-union-1.0.2.tgz#9a34410e4f4e3da23dea375be5be70f24778ec39"
@@ -201,6 +204,7 @@ array-uniq@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/array-uniq/-/array-uniq-1.0.3.tgz#af6ac877a25cc7f74e058894753858dfdb24fdb6"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 array-unique@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/array-unique/-/array-unique-0.2.1.tgz#a1d97ccafcbc2625cc70fadceb36a50c58b01a53"
@@ -217,7 +221,16 @@ asap@~2.0.3:
 =======
 =======
 >>>>>>> chore(node-sass): Add simple css compliation through node-sass
+<<<<<<< b39d3ea06e18c27e4d9535a5436ec7ea2fb58cf9
 >>>>>>> chore(node-sass): Add simple css compliation through node-sass
+=======
+=======
+arrify@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
+
+>>>>>>> chore(watch): Add scss file watch task
+>>>>>>> chore(watch): Add scss file watch task
 asn1@~0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.3.tgz#dac8787713c9966849fc8180777ebe9c1ddf3b86"
@@ -1118,6 +1131,7 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
+<<<<<<< b39d3ea06e18c27e4d9535a5436ec7ea2fb58cf9
 <<<<<<< bb03761afcf37bc6bd37822e5ee95115421f30f0
 create-react-class@^15.6.0:
   version "15.6.0"
@@ -1127,6 +1141,38 @@ create-react-class@^15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 =======
+=======
+cp-file@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/cp-file/-/cp-file-3.2.0.tgz#6f83616254624f0ad58aa4aa8d076f026be7e188"
+  dependencies:
+    graceful-fs "^4.1.2"
+    mkdirp "^0.5.0"
+    nested-error-stacks "^1.0.1"
+    object-assign "^4.0.1"
+    pify "^2.3.0"
+    pinkie-promise "^2.0.0"
+    readable-stream "^2.1.4"
+
+cpy-cli@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cpy-cli/-/cpy-cli-1.0.1.tgz#67fb5a4a2dec28ca8abff375de4b9e71f6a7561c"
+  dependencies:
+    cpy "^4.0.0"
+    meow "^3.6.0"
+
+cpy@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/cpy/-/cpy-4.0.1.tgz#b67267eba2f3960ba06a5a61ac94033422833424"
+  dependencies:
+    cp-file "^3.1.0"
+    globby "^4.0.0"
+    meow "^3.6.0"
+    nested-error-stacks "^1.0.0"
+    object-assign "^4.0.1"
+    pinkie-promise "^2.0.0"
+
+>>>>>>> chore(watch): Add scss file watch task
 cross-spawn@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-3.0.1.tgz#1256037ecb9f0c5f79e3d6ef135e30770184b982"
@@ -1438,13 +1484,17 @@ event-stream@~3.3.0:
     stream-combiner "~0.0.4"
     through "~2.3.1"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 <<<<<<< a2c2eda0d73da8c0fbdc5aaf997e525864005cf4
+=======
+>>>>>>> chore(watch): Add scss file watch task
 exec-sh@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/exec-sh/-/exec-sh-0.2.0.tgz#14f75de3f20d286ef933099b2ce50a90359cef10"
   dependencies:
     merge "^1.1.3"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 expand-brackets@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-0.1.5.tgz#df07284e342a807cd733ac5af72411e581d1177b"
@@ -1459,6 +1509,8 @@ expand-range@^1.8.1:
 
 =======
 >>>>>>> chore(node-sass): Add simple css compliation through node-sass
+=======
+>>>>>>> chore(watch): Add scss file watch task
 extend@~3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
@@ -1674,6 +1726,7 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 <<<<<<< a2c2eda0d73da8c0fbdc5aaf997e525864005cf4
 glob-base@^0.3.0:
   version "0.3.0"
@@ -1690,6 +1743,18 @@ glob-parent@^2.0.0:
 
 glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2:
 =======
+=======
+glob@^6.0.1:
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-6.0.4.tgz#0f08860f6a155127b2fadd4f9ce24b1aab6e4d22"
+  dependencies:
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "2 || 3"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
+>>>>>>> chore(watch): Add scss file watch task
 glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@~7.1.1:
 >>>>>>> chore(node-sass): Add simple css compliation through node-sass
   version "7.1.2"
@@ -1702,6 +1767,7 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@~7.1.1:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+<<<<<<< b39d3ea06e18c27e4d9535a5436ec7ea2fb58cf9
 <<<<<<< bb03761afcf37bc6bd37822e5ee95115421f30f0
 global@^4.3.0:
   version "4.3.2"
@@ -1711,6 +1777,9 @@ global@^4.3.0:
     process "~0.5.1"
 
 =======
+=======
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
+>>>>>>> chore(watch): Add scss file watch task
 <<<<<<< a2c2eda0d73da8c0fbdc5aaf997e525864005cf4
 >>>>>>> chore(node-sass): Add simple css compliation through node-sass
 globals@^9.17.0, globals@^9.18.0:
@@ -1724,10 +1793,20 @@ globby@^5.0.0:
     array-union "^1.0.1"
     arrify "^1.0.0"
     glob "^7.0.3"
+=======
+globby@^4.0.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/globby/-/globby-4.1.0.tgz#080f54549ec1b82a6c60e631fc82e1211dbe95f8"
+  dependencies:
+    array-union "^1.0.1"
+    arrify "^1.0.0"
+    glob "^6.0.1"
+>>>>>>> chore(watch): Add scss file watch task
     object-assign "^4.0.1"
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 graceful-fs@^4.1.11, graceful-fs@^4.1.2:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
@@ -1747,6 +1826,8 @@ handlebars@^4.0.3:
     uglify-js "^2.6"
 
 =======
+=======
+>>>>>>> chore(watch): Add scss file watch task
 globule@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/globule/-/globule-1.2.0.tgz#1dc49c6822dd9e8a2fa00ba2a295006e8664bd09"
@@ -2611,6 +2692,7 @@ memory-streams@^0.1.2:
   dependencies:
     readable-stream "~1.0.2"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 <<<<<<< a2c2eda0d73da8c0fbdc5aaf997e525864005cf4
 merge@^1.1.3:
   version "1.2.0"
@@ -2635,6 +2717,9 @@ micromatch@^2.1.5, micromatch@^2.3.11:
     regex-cache "^0.4.2"
 =======
 meow@^3.7.0:
+=======
+meow@^3.6.0, meow@^3.7.0:
+>>>>>>> chore(watch): Add scss file watch task
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
   dependencies:
@@ -2650,6 +2735,10 @@ meow@^3.7.0:
     trim-newlines "^1.0.0"
 >>>>>>> chore(node-sass): Add simple css compliation through node-sass
 
+merge@^1.1.3:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
+
 mime-db@~1.29.0:
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.29.0.tgz#48d26d235589651704ac5916ca06001914266878"
@@ -2660,6 +2749,7 @@ mime-types@^2.1.12, mime-types@~2.1.7:
   dependencies:
     mime-db "~1.29.0"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 <<<<<<< a2c2eda0d73da8c0fbdc5aaf997e525864005cf4
 mimic-fn@^1.0.0:
   version "1.1.0"
@@ -2675,6 +2765,9 @@ minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4:
 =======
 minimatch@^3.0.2, minimatch@^3.0.4, minimatch@~3.0.2:
 >>>>>>> chore(node-sass): Add simple css compliation through node-sass
+=======
+"minimatch@2 || 3", minimatch@^3.0.2, minimatch@^3.0.4, minimatch@~3.0.2:
+>>>>>>> chore(watch): Add scss file watch task
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
@@ -2684,6 +2777,7 @@ minimist@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 <<<<<<< a2c2eda0d73da8c0fbdc5aaf997e525864005cf4
 minimist@^1.1.1:
   version "1.2.0"
@@ -2696,6 +2790,9 @@ minimist@~0.0.1:
 mkdirp@^0.5.1:
 =======
 minimist@^1.1.3:
+=======
+minimist@^1.1.3, minimist@^1.2.0:
+>>>>>>> chore(watch): Add scss file watch task
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
 
@@ -2744,6 +2841,12 @@ normalize-package-data@^2.3.2:
 nan@^2.3.2:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.7.0.tgz#d95bf721ec877e08db276ed3fc6eb78f9083ad46"
+
+nested-error-stacks@^1.0.0, nested-error-stacks@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-1.0.2.tgz#19f619591519f096769a5ba9a86e6eeec823c3cf"
+  dependencies:
+    inherits "~2.0.1"
 
 node-gyp@^3.3.1:
   version "3.6.2"
@@ -3021,11 +3124,15 @@ performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 <<<<<<< a2c2eda0d73da8c0fbdc5aaf997e525864005cf4
 pify@^2.0.0, pify@^2.3.0:
 =======
 pify@^2.0.0:
 >>>>>>> chore(node-sass): Add simple css compliation through node-sass
+=======
+pify@^2.0.0, pify@^2.3.0:
+>>>>>>> chore(watch): Add scss file watch task
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
 
@@ -3199,11 +3306,15 @@ read-pkg@^2.0.0:
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 <<<<<<< a2c2eda0d73da8c0fbdc5aaf997e525864005cf4
 readable-stream@^2.2.2:
 =======
 readable-stream@^2.0.1, readable-stream@^2.0.6:
 >>>>>>> chore(node-sass): Add simple css compliation through node-sass
+=======
+readable-stream@^2.0.1, readable-stream@^2.0.6, readable-stream@^2.1.4:
+>>>>>>> chore(watch): Add scss file watch task
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.3.tgz#368f2512d79f9d46fdfc71349ae7878bbc1eb95c"
   dependencies:
@@ -3449,11 +3560,7 @@ scss-tokenizer@^0.2.3:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
 
-"semver@2 || 3 || 4 || 5":
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
-
-semver@~5.3.0:
+"semver@2 || 3 || 4 || 5", semver@~5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
@@ -3892,6 +3999,7 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+<<<<<<< 746e0ce26c8b45cef3449a8142af27524ebe3b9a
 <<<<<<< a2c2eda0d73da8c0fbdc5aaf997e525864005cf4
 walker@~1.0.5:
   version "1.0.7"
@@ -3930,6 +4038,15 @@ whatwg-url@^4.3.0:
 
 =======
 >>>>>>> chore(node-sass): Add simple css compliation through node-sass
+=======
+watch@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/watch/-/watch-1.0.2.tgz#340a717bde765726fa0aa07d721e0147a551df0c"
+  dependencies:
+    exec-sh "^0.2.0"
+    minimist "^1.2.0"
+
+>>>>>>> chore(watch): Add scss file watch task
 which-module@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/which-module/-/which-module-1.0.0.tgz#bba63ca861948994ff307736089e3b96026c2a4f"
