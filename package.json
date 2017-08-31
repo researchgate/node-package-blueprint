@@ -26,6 +26,7 @@
     "precommit": "run-s lint test",
     "prepare": "run-s clean generate build",
     "prepublishOnly": "run-s test",
+    "release": "standard-version",
     "test": "jest",
     "watch": "run-p watch:*",
     "watch:scss": "npm run build:dist:css -- --watch & npm run build:dist:postcss -- --poll=10 -w & npm run build:lib:scss -- --watch"
@@ -34,7 +35,11 @@
     "type": "git",
     "url": "git+https://github.com/researchgate/node-package-blueprint.git"
   },
-  "keywords": ["node", "npm", "scaffold"],
+  "keywords": [
+    "node",
+    "npm",
+    "scaffold"
+  ],
   "author": "Roland Loesslein <roland.loesslein@researchgate.net>",
   "license": "MIT",
   "bugs": {
@@ -58,6 +63,7 @@
     "react": "^0.14.0 || ^15.0.0",
     "react-dom": "^0.14.0 || ^15.0.0",
     "rimraf": "^2.6.1",
+    "standard-version": "^4.2.0",
     "stylelint": "^8.0.0",
     "stylelint-order": "^0.6.0",
     "stylelint-scss": "^2.1.0"
