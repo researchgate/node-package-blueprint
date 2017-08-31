@@ -3,6 +3,11 @@
   "version": "0.2.0",
   "description": "Blueprint for scaffolding new node packages",
   "main": "lib/js/index.js",
+  "module": "lib/es/index.js",
+  "files": [
+    "lib",
+    "dist"
+  ],
   "scripts": {
     "build": "run-s build:*",
     "build:dist": "run-s build:dist:*",
