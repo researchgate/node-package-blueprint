@@ -61,10 +61,6 @@ If you do your first release and don't want your version to be bumped you can us
 
 ```yarn release -- --first-release```
 
-## Pre-Release
-
-```yarn release -- --prerelease```
-
 ## Publish
 
 After creating a release you porbably want to publish your updates to npm. In order to do that run
