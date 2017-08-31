@@ -28,6 +28,7 @@
     "lint:scss": "stylelint --config .stylelintrc.js --syntax scss ./src/scss/**/*.scss",
     "lint:json": "jsonlint-cli {**/*.json,.*rc}",
     "lint:js": "eslint {src}/.",
+    "commitmsg": "validate-commit-msg",
     "precommit": "run-s lint test",
     "prepare": "run-s clean generate build",
     "prepublishOnly": "run-s test",
@@ -71,7 +72,8 @@
     "standard-version": "^4.2.0",
     "stylelint": "^8.0.0",
     "stylelint-order": "^0.6.0",
-    "stylelint-scss": "^2.1.0"
+    "stylelint-scss": "^2.1.0",
+    "validate-commit-msg": "^2.14.0"
   },
   "dependencies": {
     "@researchgate/babel-preset-rg": "^1.0.1",
