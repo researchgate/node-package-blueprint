@@ -21,21 +21,33 @@
     "clean:build": "echo clean:build",
     "clean:dist": "echo clean:dist",
     "clean:lib": "rimraf ./lib",
+    "commitmsg": "validate-commit-msg",
     "coverage": "yarn test -- --coverage",
-    "format": "eslint --fix src/",
+    "format": "eslint --fix src/js/",
     "generate": "echo generate",
     "lint": "run-s lint:*",
-    "lint:scss": "stylelint --config .stylelintrc.js --syntax scss ./src/scss/**/*.scss",
     "lint:json": "jsonlint-cli {**/*.json,.*rc}",
-    "lint:js": "eslint src/",
-    "commitmsg": "validate-commit-msg",
-    "precommit": "run-s lint test",
+    "lint:js": "eslint src/js/",
+    "lint:scss": "stylelint --syntax scss ./src/scss/**/*.scss",
+    "precommit": "yarn lint-staged && yarn test",
     "prepare": "run-s clean generate build",
     "prepublishOnly": "run-s test",
     "release": "standard-version",
     "test": "jest",
     "watch": "run-p watch:*",
-    "watch:scss": "npm run build:dist:css -- --watch & npm run build:dist:postcss -- --poll=10 -w & npm run build:lib:scss -- --watch"
+    "watch:scss": "yarn build:dist:css -- --watch & yarn build:dist:postcss -- --poll=10 -w & yarn build:lib:scss -- --watch"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,*rc}": [
+      "jsonlint-cli"
+    ],
+    "*.scss": [
+      "stylelint --syntax scss"
+    ]
   },
   "repository": {
     "type": "git",
@@ -64,6 +76,7 @@
     "husky": "^0.14.3",
     "jest": "^20.0.4",
     "jsonlint-cli": "^1.0.1",
+    "lint-staged": "^4.0.4",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.1.1",
     "postcss-cli": "^4.1.0",
