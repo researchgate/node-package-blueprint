@@ -57,6 +57,10 @@ In order to release a new version of the project.
 A new version will be calculated based on your commit history – make sure to follow [conventional commit message guidelines](https://github.com/conventional-changelog/standard-version#commit-message-convention-at-a-glance).
 Additionally the CHANGELOG.md will be updated automatically.
 
+If you do your first release and don't want your version to be bumped you can use the `--first-release` flag.
+
+```yarn release -- --first-release```
+
 ## Pre-Release
 
 ```yarn release -- --prerelease```
