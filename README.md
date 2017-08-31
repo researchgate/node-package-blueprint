@@ -63,7 +63,7 @@ If you do your first release and don't want your version to be bumped you can us
 
 ## Publish
 
-After creating a release you porbably want to publish your updates to npm. In order to do that run
+After creating a release you probably want to publish your updates to npm. In order to do that run
 
 ```git push --follow-tags origin master; npm publish```
 
