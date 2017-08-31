@@ -16,7 +16,7 @@
     "clean:build": "echo clean:build",
     "clean:dist": "echo clean:dist",
     "clean:lib": "rimraf ./lib",
-    "coverage": "echo coverage",
+    "coverage": "yarn test -- --coverage",
     "format": "eslint --fix",
     "generate": "echo generate",
     "lint": "run-s lint:*",
