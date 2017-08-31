@@ -60,3 +60,13 @@ Additionally the CHANGELOG.md will be updated automatically.
 ## Pre-Release
 
 ```yarn release -- --prerelease```
+
+## Publish
+
+After creating a release you porbably want to publish your updates to npm. In order to do that run
+
+```git push --follow-tags origin master; npm publish```
+
+Note: If you publish for the first time make sure to include `access` flag to the command:
+
+```git push --follow-tags origin master; npm publish --access public```
