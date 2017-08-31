@@ -1,0 +1,14 @@
+[ignore]
+.*/lib/.*
+.*/node_modules/.*
+
+[include]
+src/js/**/*.js
+
+[libs]
+
+[options]
+suppress_comment=.*\\$FlowIgnore.*
+
+[version]
+^0.53.1

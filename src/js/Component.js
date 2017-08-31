@@ -1,17 +1,17 @@
+// @flow
 import React from 'react';
 
-const styles = {
-    fontFamily: 'Roboto, sans-serif',
-    textAlign: 'center',
+type Props = {
+    count: number,
 };
 
-class Component extends React.Component {
+class Component extends React.Component<Props> {
+    static defaultProps = {
+        count: 0,
+    };
+
     render() {
-        return (
-            <div style={styles}>
-                <h2>Say hello to RG's Blueprint!</h2>
-            </div>
-        );
+        return <div>Count: {this.props.count}</div>;
     }
 }
 

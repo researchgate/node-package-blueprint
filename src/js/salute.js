@@ -1,3 +1,4 @@
-module.exports = function() {
-    return "Say hello to RG's Blueprint!";
+// @flow
+module.exports = function(count: number = 0): string {
+    return `Count: ${count}`;
 };
