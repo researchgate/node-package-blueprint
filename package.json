@@ -17,10 +17,9 @@
     "build:lib:js": "cross-env BABEL_ENV=production BABEL_OUTPUT=cjs babel ./src/js --out-dir ./lib/js --ignore __tests__ --copy-files",
     "build:lib:es": "cross-env BABEL_ENV=production BABEL_OUTPUT=esm babel ./src/js --out-dir ./lib/es --ignore __tests__ --copy-files",
     "build:lib:scss": "cpx \"./src/scss/**/*.scss\" ./lib/scss",
-    "clean": "run-s clean:*",
-    "clean:build": "echo clean:build",
-    "clean:dist": "echo clean:dist",
-    "clean:lib": "rimraf ./lib",
+    "clear": "run-s clear:*",
+    "clear:dist": "rimraf ./dist",
+    "clear:lib": "rimraf ./lib",
     "coverage": "yarn test -- --coverage",
     "format": "eslint --fix src/",
     "generate": "echo generate",
@@ -30,12 +29,14 @@
     "lint:js": "eslint src/",
     "commitmsg": "validate-commit-msg",
     "precommit": "run-s lint test",
-    "prepare": "run-s clean generate build",
+    "prepare": "run-s clear generate build",
     "prepublishOnly": "run-s test",
     "release": "standard-version",
     "test": "jest",
     "watch": "run-p watch:*",
-    "watch:scss": "npm run build:dist:css -- --watch & npm run build:dist:postcss -- --poll=10 -w & npm run build:lib:scss -- --watch"
+    "watch:scss": "npm run build:dist:css -- --watch & npm run build:dist:postcss -- --poll=10 -w & npm run build:lib:scss -- --watch",
+    "watch:js": "yarn build:lib:js -- --watch",
+    "watch:es": "yarn build:lib:es -- --watch"
   },
   "repository": {
     "type": "git",
@@ -79,6 +80,10 @@
   },
   "dependencies": {
     "@researchgate/babel-preset-rg": "^1.0.1",
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
     "normalize-scss": "^7.0.0"
   }
 }
