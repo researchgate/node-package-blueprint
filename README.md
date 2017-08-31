@@ -49,6 +49,24 @@ Put your custom node scripts into a folder called `node` in the root and add sub
 Use `yarn` to install dependencies
 ```yarn install```
 
+## Release
+In order to release a new version of the project.
+
+```yarn release```
+
+A new version will be calculated based on your commit history – make sure to follow [conventional commit message guidelines](https://github.com/conventional-changelog/standard-version#commit-message-convention-at-a-glance).
+Additionally the CHANGELOG.md will be updated automatically.
+
+If you do your first release and don't want your version to be bumped you can use the `--first-release` flag.
+
+```yarn release -- --first-release```
+
 ## Publish
-Use `npm` to publish
-```npm publish```
+
+After creating a release you probably want to publish your updates to npm. In order to do that run
+
+```git push --follow-tags origin master; npm publish```
+
+Note: If you publish for the first time make sure to include `access` flag to the command:
+
+```git push --follow-tags origin master; npm publish --access public```
