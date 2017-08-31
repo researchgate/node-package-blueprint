@@ -4,23 +4,22 @@
   "description": "Blueprint for scaffolding new node packages",
   "main": "lib/js/index.js",
   "module": "lib/es/index.js",
-  "files": [
-    "lib",
-    "dist"
-  ],
+  "files": ["lib", "dist"],
   "scripts": {
     "build": "run-s build:*",
     "build:dist": "run-s build:dist:*",
-    "build:dist:css": "node-sass --include-path ./node_modules ./src/scss --output ./dist/css",
+    "build:dist:css":
+      "node-sass --include-path ./node_modules ./src/scss --output ./dist/css",
     "build:dist:postcss": "postcss ./dist/css/*.css -r -c .postcss.config.js",
     "build:lib": "run-s build:lib:*",
-    "build:lib:js": "cross-env BABEL_ENV=production BABEL_OUTPUT=cjs babel ./src/js --out-dir ./lib/js --ignore __tests__ --copy-files",
-    "build:lib:es": "cross-env BABEL_ENV=production BABEL_OUTPUT=esm babel ./src/js --out-dir ./lib/es --ignore __tests__ --copy-files",
+    "build:lib:js":
+      "cross-env BABEL_ENV=production BABEL_OUTPUT=cjs babel ./src/js --out-dir ./lib/js --ignore __tests__ --copy-files",
+    "build:lib:es":
+      "cross-env BABEL_ENV=production BABEL_OUTPUT=esm babel ./src/js --out-dir ./lib/es --ignore __tests__ --copy-files",
     "build:lib:scss": "cpx \"./src/scss/**/*.scss\" ./lib/scss",
-    "clean": "run-s clean:*",
-    "clean:build": "echo clean:build",
-    "clean:dist": "echo clean:dist",
-    "clean:lib": "rimraf ./lib",
+    "clear": "run-s clear:*",
+    "clear:dist": "rimraf ./dist",
+    "clear:lib": "rimraf ./lib",
     "commitmsg": "validate-commit-msg",
     "coverage": "yarn test -- --coverage",
     "format": "eslint --fix src/js/",
@@ -30,34 +29,26 @@
     "lint:js": "eslint src/js/",
     "lint:scss": "stylelint --syntax scss ./src/scss/**/*.scss",
     "precommit": "yarn lint-staged && yarn test",
-    "prepare": "run-s clean generate build",
+    "prepare": "run-s clear generate build",
     "prepublishOnly": "run-s test",
     "release": "standard-version",
     "test": "jest",
     "watch": "run-p watch:*",
-    "watch:scss": "yarn build:dist:css -- --watch & yarn build:dist:postcss -- --poll=10 -w & yarn build:lib:scss -- --watch"
+    "watch:scss":
+      "yarn build:dist:css -- --watch & yarn build:dist:postcss -- --poll=10 -w & yarn build:lib:scss -- --watch",
+    "watch:js": "yarn build:lib:js -- --watch",
+    "watch:es": "yarn build:lib:es -- --watch"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{json,*rc}": [
-      "jsonlint-cli"
-    ],
-    "*.scss": [
-      "stylelint --syntax scss"
-    ]
+    "*.js": ["eslint --fix", "git add"],
+    "*.{json,*rc}": ["jsonlint-cli"],
+    "*.scss": ["stylelint --syntax scss"]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/researchgate/node-package-blueprint.git"
   },
-  "keywords": [
-    "node",
-    "npm",
-    "scaffold"
-  ],
+  "keywords": ["node", "npm", "scaffold"],
   "author": "Roland Loesslein <roland.loesslein@researchgate.net>",
   "license": "MIT",
   "bugs": {
@@ -92,6 +83,10 @@
   },
   "dependencies": {
     "@researchgate/babel-preset-rg": "^1.0.1",
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
     "normalize-scss": "^7.0.0"
   }
 }
