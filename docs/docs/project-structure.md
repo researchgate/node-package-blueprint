@@ -15,7 +15,7 @@ It will create a directory called my-project inside the current folder.
 Inside that directory, it will generate the initial project structure:
 
 ```
-node-package-blueprint
+my-project
 ├── README.md
 ├── package.json
 ├── .gitignore
