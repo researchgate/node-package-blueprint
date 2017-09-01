@@ -1,9 +1,27 @@
-Do you want to request a feature or report a bug?
+Thanks for taking the time to file an issue with us.
+Please note that this issue template is used **ONLY** for reporting bugs.
 
-What is the current behavior?
+If you have an issue that isn’t a bug, please follow the steps listed in the [Contributing](CONTRIBUTING.md).
+Thanks!
 
-If the current behavior is a bug, please provide the steps to reproduce and if possible a minimal demo of the problem via [https://codesandbox.io](https://codesandbox.io/s/new).
+## Expected behavior
+<!--- What should happen -->
 
-What is the expected behavior?
+## Current behavior
+<!--- What is happening instead of the expected behavior -->
 
-Which versions of this project, and which browser / OS are affected by this issue? Did this work in previous versions of this project?
+## Steps to reproduce
+<!--- Provide a link to a live example, a code snippet, or a set of steps to -->
+<!--- reproduce this bug. -->
+1.
+2.
+3.
+4.
+
+## Context (environment)
+<!--- Please provide technical context, as well as possible background -->
+<!--- information that can help us identify the problem -->
+
+* **Version**: <!-- compulsory. you must provide your version -->
+* **Platform**: <!-- either `uname -a` output, or if Windows, version and 32-bit or
+  64-bit -->
