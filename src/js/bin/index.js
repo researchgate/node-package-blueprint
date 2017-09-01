@@ -5,23 +5,35 @@ import commander from 'commander';
 import readline from 'readline';
 import chalk from 'chalk';
 import path from 'path';
-import fs from 'fs';
+import fs from 'fs-extra';
 import mkdirp from 'mkdirp';
 import { Spinner } from 'cli-spinner';
 import { ncp } from 'ncp';
 
-let directoryValue;
+let directoryName;
 
-const packageJsonNew = {
+// Files to be ignored when syncing the project directory
+const ignoreFiles = [
+    '.git',
+    'template',
+    'AUTHORS',
+    'README.md',
+    'CHANGELOG.md',
+    'node_modules',
+    'lib',
+    'dist',
+    'src/js/bin',
+];
+
+// Default values for package.json
+// @todo add default name based on the passed directory
+const packageConfig = {
     version: '0.1.0',
     author: '',
 };
-const packageJsonOverwrites = ['homepage', 'bugs', 'repository'];
 
-const config = {
-    version: '0.1.0',
-    author: '',
-};
+// Configuration in package.json that should be ignored
+const ignorePackageConfig = ['homepage', 'bugs', 'repository'];
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -33,11 +45,11 @@ const program = new commander.Command()
     .arguments('<directory>')
     .usage(`${chalk.green('<directory>')} [options]`)
     .action(function(directory) {
-        directoryValue = directory;
+        directoryName = directory;
     })
     .parse(process.argv);
 
-if (typeof directoryValue === 'undefined') {
+if (typeof directoryName === 'undefined') {
     console.log('Please specify a directory for your new project');
     process.exit(1);
 }
@@ -57,14 +69,13 @@ const prompt = question =>
 
 const promptForPackageJson = (key, question) =>
     new Promise((resolve, reject) => {
-        const defaultConfig = packageJsonNew[key] ? chalk.grey(` ${packageJsonNew[key]}`) : '';
+        const defaultConfig = packageConfig[key] ? chalk.grey(` ${packageConfig[key]}`) : '';
         prompt(`${question}${defaultConfig} `).then(answer => {
-            packageJsonNew[key] = answer || packageJsonNew[key];
-            resolve(packageJsonNew[key]);
+            packageConfig[key] = answer || packageConfig[key];
+            resolve(packageConfig[key]);
         });
     });
 
-// prompt('What is your name?').then((name) => {console.log(`Oh, hi ${name}`)});
 promptForPackageJson('name', 'package name:')
     .then(name => {
         if (!isNameValid(name)) {
@@ -86,7 +97,7 @@ promptForPackageJson('name', 'package name:')
     })
     .then(() => {
         rl.close();
-        createProject(directoryValue, config);
+        createProject(directoryName, packageConfig);
     });
 
 const printValidationResults = results => {
@@ -95,6 +106,72 @@ const printValidationResults = results => {
             console.error(chalk.red(`  *  ${error}`));
         });
     }
+};
+
+const shouldBeIgnored = src => {
+    for (var i = 0; i < ignoreFiles.length; i++) {
+        if (src.indexOf(ignoreFiles[i]) === 0) {
+            return true;
+        }
+    }
+    return false;
+};
+
+const createProject = (name, config) => {
+    const targetDir = path.resolve(name);
+    const sourceDir = path.resolve(__dirname, '../../../');
+    const appName = path.basename(targetDir);
+
+    fs.ensureDirSync(name);
+
+    if (!isSafeToCreateProjectIn(targetDir, name)) {
+        process.exit(1);
+    }
+
+    console.log();
+    console.log('👍🏻  Roger that.');
+    console.log();
+
+    const spinner = new Spinner('%s Please wait while we`re bootstrapping your project');
+    spinner.setSpinnerString('⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏');
+    spinner.start();
+
+    fs
+        .copy(`${sourceDir}`, targetDir, {
+            filter: (src, dest) => {
+                const relativePath = path.relative(sourceDir, src);
+                return !shouldBeIgnored(relativePath);
+            },
+        })
+        .then(() => timeout())
+        .then(() => {
+            return fs.copy(path.resolve(__dirname, 'template'), targetDir);
+        })
+        .then(() => {
+            console.log();
+            console.log();
+            console.log(`🙌🏻  Your project is ready and is waiting for you over here: ${targetDir}`);
+            console.log();
+            spinner.stop();
+        });
+};
+
+const timeout = () =>
+    new Promise(resolve => {
+        setTimeout(resolve, 1000);
+    });
+
+const isNameValid = name => {
+    const validationResult = validateProjectName(name);
+    if (!validationResult.validForNewPackages) {
+        console.error(
+            `Could not create a project called ${chalk.red(`"${name}"`)} because of npm naming restrictions:`,
+        );
+        printValidationResults(validationResult.errors);
+        printValidationResults(validationResult.warnings);
+        return false;
+    }
+    return true;
 };
 
 const isVersionValid = version => {
@@ -106,19 +183,6 @@ const isVersionValid = version => {
                 `"${version}"`,
             )} because of invalid semantic version format.`,
         );
-        return false;
-    }
-    return true;
-};
-
-const isNameValid = name => {
-    const validationResult = validateProjectName(name);
-    if (!validationResult.validForNewPackages) {
-        console.error(
-            `Could not create a project called ${chalk.red(`"${name}"`)} because of npm naming restrictions:`,
-        );
-        printValidationResults(validationResult.errors);
-        printValidationResults(validationResult.warnings);
         return false;
     }
     return true;
@@ -154,45 +218,4 @@ const isSafeToCreateProjectIn = (dir, name) => {
     console.log('Either try using a new directory name, or remove the files listed above.');
 
     return false;
-};
-
-const createProject = (name, config) => {
-    const root = path.resolve(name);
-    const appName = path.basename(root);
-
-    mkdirp.sync(name);
-
-    if (!isSafeToCreateProjectIn(root, name)) {
-        process.exit(1);
-    }
-
-    console.log();
-    console.log('👍🏻  Roger that.');
-    console.log();
-
-    const spinner = new Spinner('%s Please wait while we`re bootstrapping your project');
-    spinner.setSpinnerString('⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏');
-    spinner.start();
-
-    ncp(path.resolve(__dirname, '../../../'), root, err => {
-        if (err) {
-            return console.error(err);
-        }
-
-        const newPackageJson = Object.assign({}, packageJson, packageJsonNew);
-
-        packageJsonOverwrites.forEach(packageJsonOverwrite => {
-            delete newPackageJson[packageJsonOverwrite];
-        });
-
-        fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(newPackageJson, null, 2));
-
-        ncp(path.resolve(__dirname, '../../../template'), root, err => {
-            console.log();
-            console.log();
-            console.log(`🙌🏻  Your project is ready and is waiting for you over here: ${root}`);
-            console.log();
-            spinner.stop();
-        });
-    });
 };
