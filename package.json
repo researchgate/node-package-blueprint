@@ -1,6 +1,6 @@
 {
   "name": "@researchgate/node-package-blueprint",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Blueprint for scaffolding new node packages",
   "main": "lib/js/index.js",
   "module": "lib/es/index.js",
