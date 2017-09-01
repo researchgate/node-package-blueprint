@@ -2,7 +2,7 @@
 
 Thanks for taking the time to contribute!
 
-#### Table of contents
+### Table of contents
 
 [Code of Conduct](#code-of-conduct)
 
@@ -137,6 +137,6 @@ When filing an issue or pull request, please take the time to fill out the templ
 
 ### Need help?
 
-If you need any help or require additional information, don't hesitate to contact the project maintainer or any of the contributors listed in the [ResearchGate Open Source Support team](SUPPORT.md)
+If you need any help or require additional information, don't hesitate to contact the project maintainer or any of the contributors.
 
 Thank you for contributing!
