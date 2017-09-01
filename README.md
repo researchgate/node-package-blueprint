@@ -6,6 +6,7 @@
   <a href="https://travis-ci.org/researchgate/node-package-blueprint"><img alt="Build Status" src="https://travis-ci.org/researchgate/node-package-blueprint.svg?branch=master"></a>
   <a href="https://codecov.io/gh/researchgate/node-package-blueprint"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/researchgate/node-package-blueprint.svg"></a>
   <a href="https://dependencyci.com/github/researchgate/node-package-blueprint"><img alt="Dependency Status" src="https://dependencyci.com/github/researchgate/node-package-blueprint/badge"></a>
+  <a href="https://www.npmjs.com/package/@researchgate/node-package-blueprint"><img alt="NPM version" src="https://img.shields.io/npm/v/@researchgate/node-package-blueprint.svg"></a>
 </p>
 
 Simplify the creation and open sourcing of front-end projects:
