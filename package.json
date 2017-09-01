@@ -91,6 +91,7 @@
     "commander": "^2.11.0",
     "fs-extra": "^4.0.1",
     "ncp": "^2.0.0",
+    "nodegit": "^0.20.1",
     "normalize-scss": "^7.0.0",
     "semver": "^5.4.1",
     "validate-npm-package-name": "^3.0.0"

@@ -9,6 +9,7 @@ import chalk from 'chalk';
 import path from 'path';
 import fs from 'fs-extra';
 import { Spinner } from 'cli-spinner';
+import git from 'nodegit';
 import { ncp } from 'ncp';
 
 let directoryName;
@@ -165,13 +166,22 @@ const createProject = (name, config) => {
     ignorePackageConfig.forEach(ignore => {
         delete newPackageJson[ignore];
     });
-
     fs
-        .copy(`${sourceDir}`, targetDir, {
-            filter: (src, dest) => {
-                const relativePath = path.relative(sourceDir, src);
-                return !shouldBeIgnored(relativePath);
-            },
+        .emptyDir('./tmp')
+        .then(() => {
+            console.log();
+            console.log('🚚  Fetching project files from repository');
+            return git.Clone('https://github.com/researchgate/node-package-blueprint.git', './tmp');
+        })
+        .then(() => {
+            console.log();
+            console.log('📦  Prepare project');
+            return fs.copy(`./tmp`, targetDir, {
+                filter: (src, dest) => {
+                    const relativePath = path.relative(`./tmp`, src);
+                    return !shouldBeIgnored(relativePath);
+                },
+            });
         })
         .then(() => {
             return fs.outputFile(path.join(targetDir, 'package.json'), JSON.stringify(newPackageJson, null, 2));
