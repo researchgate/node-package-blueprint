@@ -12,6 +12,8 @@ import { Spinner } from 'cli-spinner';
 import git from 'nodegit';
 import { ncp } from 'ncp';
 
+const GIT_URL = 'https://github.com/researchgate/node-package-blueprint.git';
+
 let directoryName;
 
 // Files to be ignored when syncing the project directory
@@ -58,6 +60,7 @@ if (typeof directoryName === 'undefined') {
     process.exit(1);
 }
 
+// Main run file
 const run = () => {
     const targetDir = path.resolve(directoryName);
     fs.ensureDirSync(directoryName);
@@ -171,7 +174,7 @@ const createProject = (name, config) => {
         .then(() => {
             console.log();
             console.log('🚚  Fetching project files from repository');
-            return git.Clone('https://github.com/researchgate/node-package-blueprint.git', './tmp');
+            return git.Clone(GIT_URL, './tmp');
         })
         .then(() => {
             console.log();
