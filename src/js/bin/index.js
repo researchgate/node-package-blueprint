@@ -8,7 +8,6 @@ import readline from 'readline';
 import chalk from 'chalk';
 import path from 'path';
 import fs from 'fs-extra';
-import mkdirp from 'mkdirp';
 import { Spinner } from 'cli-spinner';
 import { ncp } from 'ncp';
 
