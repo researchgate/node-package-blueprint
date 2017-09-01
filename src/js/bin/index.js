@@ -45,6 +45,7 @@ const program = new commander.Command()
     .arguments('<directory>')
     .usage(`${chalk.green('<directory>')} [options]`)
     .action(function(directory) {
+        packageConfig.name = directory.split('/').pop();
         directoryName = directory;
     })
     .parse(process.argv);
