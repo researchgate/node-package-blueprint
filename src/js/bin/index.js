@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import packageJson from '../../../package.json';
 import validateProjectName from 'validate-npm-package-name';
 import semver from 'semver';
