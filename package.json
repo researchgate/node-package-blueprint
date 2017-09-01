@@ -26,6 +26,8 @@
     "format": "eslint --fix src/js/",
     "generate": "echo generate",
     "lint": "run-s lint:*",
+    "lint:scss":
+      "stylelint --config .stylelintrc.js --syntax scss ./src/scss/**/*.scss",
     "lint:json": "jsonlint-cli {**/*.json,.*rc}",
     "lint:js": "eslint src/js/",
     "lint:scss": "stylelint --syntax scss ./src/scss/**/*.scss",
@@ -80,8 +82,7 @@
     "stylelint": "^8.0.0",
     "stylelint-order": "^0.6.0",
     "stylelint-scss": "^2.1.0",
-    "validate-commit-msg": "^2.14.0",
-    "validate-npm-package-name": "^3.0.0"
+    "validate-commit-msg": "^2.14.0"
   },
   "dependencies": {
     "@researchgate/babel-preset-rg": "^1.0.1",
@@ -91,6 +92,7 @@
     "fs-extra": "^4.0.1",
     "ncp": "^2.0.0",
     "normalize-scss": "^7.0.0",
-    "semver": "^5.4.1"
+    "semver": "^5.4.1",
+    "validate-npm-package-name": "^3.0.0"
   }
 }
