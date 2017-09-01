@@ -35,7 +35,7 @@ Before you start your work, make sure that you:
 * have `npm` installed at 5.3.0
 * have `yarn` installed at v0.21.3
 * are familiar with `git`
-* are familiar with [conventional commits](conventionalcommits.org)
+* are familiar with [conventional commits](http://conventionalcommits.org)
 * have read and agree to abide by the [ResearchGate Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## Project setup
