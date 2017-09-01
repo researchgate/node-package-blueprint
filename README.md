@@ -69,4 +69,10 @@ Our documentation is structured in sections directly available under the `docs` 
 
 ## Contributing
 
-We'd love to see your ideas and contributions to Node Package Blueprint. For more information about PRs and issues, see our [Contribution Guidelines](.github/CONTRIBUTING.md). Additionally, check out our [Code of Conduct](.github/CODE_OF_CONDUCT.md).
+We'd love your help on creating Node Package Blueprint!
+
+Before you do, please read our [Code of Conduct](.github/CODE_OF_CONDUCT.md) so you know what we expect when you contribute to our projects.
+
+Our [Contributing Guide](.github/CONTRIBUTING.md) tells you about our development process and what we're looking for, gives you instructions on how to issue bugs and suggest features, and explains how you can build and test your changes.
+
+**Haven't contributed to an open source project before?** No problem! [Contributing Guide](.github/CONTRIBUTING.md) has you covered as well.
