@@ -1,72 +1,68 @@
-# node-package-blueprint
-Blueprint for scaffolding new node packages
+# Node Package Blueprint
 
 [![Build Status](https://travis-ci.org/researchgate/node-package-blueprint.svg?branch=master)](https://travis-ci.org/researchgate/node-package-blueprint)
 [![Codecov](https://img.shields.io/codecov/c/github/researchgate/node-package-blueprint.svg)](https://codecov.io/gh/researchgate/node-package-blueprint)
 [![Dependency Status](https://dependencyci.com/github/researchgate/node-package-blueprint/badge)](https://dependencyci.com/github/researchgate/node-package-blueprint)
 
-# Guidelines
+Simplify the creation and open sourcing of front-end projects.
 
-### Build scripts
+- **👩‍💻&nbsp;&nbsp;Start From CLI:** generate the perfect starting blueprint for your new project
+- **📐&nbsp;&nbsp;Project Layout**: follow a clear and pre-defined project structure to ease the way to open sourcing
+- **🔧&nbsp;&nbsp;Integrated Tooling**: conciously chosen set of tools, configured and accessible via npm/yarn scripts
+- **🎡&nbsp;&nbsp;Automated tasks**: from commit message checking to changelog generation for releases
 
-The project's build pipeline and other processes are executed using npm scripts. Avoid using `gulp` or `grunt` if possible – npm scripts are as powerful as these tools are.
+We want to make the process of open source projects at [ResearchGate](https://github.com/researchgate) simple, and conventional.
 
-#### Scripts shipped with this project
+When we create a new project, there are a lot of open questions around on how to best structure, document, and which tools to use.
 
-| Script  | Description|
-| ------------- | ------------- |
-| `build` | Runs a full build of all source files, binaries and complied bundles.  |
-| `lint` | Runs code linters for scss, js and json files.  |
-| `format` | Applies formatting rules to source files.  |
-| `generate` | Generates all necessary for a project to be built.  |
-| `clean` | Removes temporary files such as build folders and generated files.  |
-| `test` | Runs all tests on source files.  |
-| `prepare` | Prepares a release of the package by running `clean`, `generate` and `build`  |
-| `watch` | Watch changes of source files and kicks of new builds.  |
-| `prepublishOnly` | Runs all tests before publishing  |
-| `precommit` | Runs tests and linting before committing |
+This project provides the guidelines that clarify and facilitate this process.
 
+## Getting started
 
-#### Write your own scripts
+Install Node Package Blueprint as a global npm package:
 
-Feel free to extend the scripts to meet your requirements.
+```
+npm install -g @researchgate/node-package-blueprint
+```
 
-The naming of npm scripts follows their purpose and subcommands are namespaced using `:`. While a `lint` is expected to run all linting related subcommands ()`lint:*`), `lint:js` is expected to just run linting for javascript files.
+Now create a new project with the CLI tool:
 
-Use [npm-run-all](https://github.com/mysticatea/npm-run-all) commands to simplify the sequential or parallel exection of scripts.
+```
+node-package-blueprint my-project
+cd my-project/
+```
 
-#### What if my scripts are too complex?
+🏁&nbsp;&nbsp;Your project is ready! Take a look at the folder contents and when ready, install the dependencies:
 
-Sometimes the logic behind your scripts is too complex to be executed on the command line.
+```
+yarn install
+```
 
-In this case you can work around using node to execute some javascript rather then using a cli command.
+Once you're ready to release a new version use:
 
-Put your custom node scripts into a folder called `node` in the root and add subdirectories analog to the namespaced used for the npm script to be called. `generate:assets` should resolve in `node scripts/generate/assets.js`.
+```
+yarn release
+```
 
-# Contribute
+This script will calculate the version number based on your commit history – make sure to follow the [conventional commits](conventionalcommits.org) guidelines. The [CHANGELOG.md](./CHANGELOG.md) file is automatically updated with the relevant changes.
 
-## Install
-Use `yarn` to install dependencies
-```yarn install```
+If it's your first release, you probably do not want to bump a new version into the history.
 
-## Release
-In order to release a new version of the project.
+In such cases, use the `--first-release` flag:
 
-```yarn release```
+```
+yarn release -- --first-release
+```
 
-A new version will be calculated based on your commit history – make sure to follow [conventional commit message guidelines](https://github.com/conventional-changelog/standard-version#commit-message-convention-at-a-glance).
-Additionally the CHANGELOG.md will be updated automatically.
+## Documentation
 
-If you do your first release and don't want your version to be bumped you can use the `--first-release` flag.
+Our documentation is structured in sections directly available under the `docs` folder:
 
-```yarn release -- --first-release```
+- [How to Publish](./docs/docs/publishing.md)
+- [Project Structure](./docs/docs/project-structure.md)
+- [Integrated Tooling](./docs/docs/integrated-tooling.md)
+- [Documenting on Github](./docs/docs/documenting-on-github.md)
 
-## Publish
+## Contributing
 
-After creating a release you probably want to publish your updates to npm. In order to do that run
-
-```git push --follow-tags origin master; npm publish```
-
-Note: If you publish for the first time make sure to include `access` flag to the command:
-
-```git push --follow-tags origin master; npm publish --access public```
+We'd love to see your ideas and contributions to Node Package Blueprint. For more information about PRs and issues, see our [Contribution Guidelines](.github/CONTRIBUTING.md). Additionally, check out our [Code of Conduct](.github/CODE_OF_CONDUCT.md).
