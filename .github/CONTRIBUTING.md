@@ -11,9 +11,10 @@ Thanks for taking the time to contribute!
   * [How to run tests](#how-to-test)
 
 [How can you contribute](#how-can-you-contribute)
-  * [Reporting Bugs](#reporting-bugs)
-  * [Suggesting Enhancements](#suggesting-enhancements)
-  * [Your First Code Contribution](#your-first-code-contribution)
+  * [Reporting bugs](#reporting-bugs)
+  * [Suggesting enhancements](#suggesting-enhancements)
+  * [Writing documentation](#writing-documentation)
+  * [Your first code contribution](#your-first-code-contribution)
 
 [Additional Notes](#additional-notes)
   * [Issue and Pull Request Templates](#issue-and-pull-request-templates)
@@ -28,35 +29,57 @@ By participating you are expected to uphold this code. Please report any behavio
 
 ### How to run the project
 
-[to be filled when the work on scaffolding is done]
+## Release
+To release a new version of the project.
 
-### How to run tests
+```yarn release```
 
-[to be filled when the work on scaffolding is done]
+A new version will be calculated based on your commit history – make sure you follow [conventional commit message guidelines](https://github.com/conventional-changelog/standard-version#commit-message-convention-at-a-glance).
+Please be aware that the CHANGELOG.md will be updated automatically.
 
-## How can you contribute
+If, for your first release, you don't want your version to be bumped,use the `--first-release` flag.
+
+```yarn release -- --first-release```
+
+## Publish
+
+After creating a release, you probably want to publish your updates to npm. To do this, run
+
+```git push --follow-tags origin master; npm publish```
+
+Note: When you publish for the first time, make sure you include `access` flag to the command:
+
+```git push --follow-tags origin master; npm publish --access public```
+
+## How you can contribute
 
 ### Reporting bugs
 
-This section guides you through submitting a bug report for ResearchGate project. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
+This section guides you through the steps to follow when you submit a bug report for a ResearchGate project.
+Following these guidelines makes it easy for the maintainers and community to understand your report, reproduce the behavior, and find related reports.
 
-Before creating bug reports, please check Open Issues as you might find out that there already was one opened for the bug you have found. When you are creating a bug report, please include as many details as possible and fill out [the required template](ISSUE_TEMPLATE.md), the information it asks for helps us resolve issues faster.
+Before creating a bug report, please check Open Issues as you may find that there is already an issue open for the bug you’vefound. When you create a bug report, be sure to include as much detail as possible and fill out [the required template](ISSUE_TEMPLATE.md), the information it asks for helps us resolve issues faster.
 
 ### Suggesting enhancements
 
 This section guides you through submitting a feature suggestion.
-All enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/) and when approved by a core team member or project maintainer are then given a green light to be turned into a Pull Request.
-For the best possible experience please provide us with:
+All enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/) and, when approved by a core team member or project maintainer, are given the green light to then be turned into a Pull Request.
+For the best possible experience, please provide us with:
 
 * **A clear and descriptive title**
-* **A step-by-step description of the suggested enhancement** and what it should do.
-* **Specific examples to demonstrate the steps**. Ideally support it with code snippets, screenshots and/or animated GIFs.
-* **Explanation of why this feature would be useful** to this project.
-* **Your development environment** and context in which said feature would be created.
+* **A step-by-step description of the suggested enhancement** and what it should do
+* **Specific examples to demonstrate the steps**. Ideally, you should support it with code snippets, screenshots, and/or animated GIFs
+* **Explanation of why this feature would be useful** to this project
+* **Your development environment** and context for creating the feature
+
+### Writing documentation
+
+All great projects require good documentation.
+There is __always__ room for (better) docs, so why not to contribute to the project by enhancing them?
 
 ### Your first code contribution
 
-Unsure where to start  contributing to the project?
+Unsure where you can start contributing?
 We strive to make all our projects easy for beginners to contribute to. Just look out for issues labeled `help-wanted` and `beginner-friendly`, then get stuck in!
 If you still need some guidance, consider [this resource](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github) and/or contact us.
 
@@ -69,3 +92,5 @@ When filing an issue or pull request, please take the time to fill out the templ
 ### Need help?
 
 If you need any help or require additional information, don't hesitate to contact the project maintainer or any of the contributors listed in the [ResearchGate Open Source Support team](SUPPORT.md)
+
+Thank you for contributing!
