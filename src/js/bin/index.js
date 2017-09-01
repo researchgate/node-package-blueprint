@@ -14,6 +14,7 @@ import { ncp } from 'ncp';
 
 const GIT_URL = 'https://github.com/researchgate/node-package-blueprint.git';
 
+const log = console.log;
 let directoryName;
 
 // Files to be ignored when syncing the project directory
@@ -56,7 +57,7 @@ const program = new commander.Command()
     .parse(process.argv);
 
 if (typeof directoryName === 'undefined') {
-    console.log('Please specify a directory for your new project');
+    log('Please specify a directory for your new project');
     process.exit(1);
 }
 
@@ -69,9 +70,8 @@ const run = () => {
         process.exit(1);
     }
 
-    console.log();
-    console.log();
-    console.log('👋🏻  Hi! You ready to create a new project?');
+    log();
+    log('👋🏻  Hi! You ready to create a new project?');
     promptPackageJson();
 };
 
@@ -92,9 +92,9 @@ const promptForPackageJson = (key, question) =>
     });
 
 const promptPackageJson = () => {
-    console.log();
-    console.log("Just answer a couple of questions and you'll be ready to go");
-    console.log();
+    log();
+    log("Just answer a couple of questions and you'll be ready to go");
+    log();
 
     promptForPackageJson('name', 'package name:')
         .then(name => {
@@ -118,10 +118,14 @@ const promptPackageJson = () => {
         .then(keywords => {
             packageConfig.keywords = keywords ? keywords.split(/[\s,]+/) : '';
             confirmProjectCreation(directoryName, packageConfig);
+        })
+        .catch(e => {
+            console.log(e);
         });
 };
 
 const confirmProjectCreation = (directoryName, packageConfig) => {
+    log();
     const question = `${JSON.stringify(packageConfig, null, 2)}\n\nIs that okay? ${chalk.grey('yes')}`;
 
     rl.question(question, answer => {
@@ -156,9 +160,9 @@ const createProject = (name, config) => {
     const sourceDir = path.resolve(__dirname, '../../../');
     const appName = path.basename(targetDir);
 
-    console.log();
-    console.log('👍🏻  Roger that.');
-    console.log();
+    log();
+    log('👍🏻  Roger that.');
+    log();
 
     const spinner = new Spinner('%s Please wait while we`re bootstrapping your project');
     spinner.setSpinnerString('⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏');
@@ -172,13 +176,13 @@ const createProject = (name, config) => {
     fs
         .emptyDir('./tmp')
         .then(() => {
-            console.log();
-            console.log('🚚  Fetching project files from repository');
+            log();
+            log('🚚  Fetching project files from repository');
             return git.Clone(GIT_URL, './tmp');
         })
         .then(() => {
-            console.log();
-            console.log('📦  Prepare project');
+            log();
+            log('📦  Prepare project');
             return fs.copy(`./tmp`, targetDir, {
                 filter: (src, dest) => {
                     const relativePath = path.relative(`./tmp`, src);
@@ -194,11 +198,14 @@ const createProject = (name, config) => {
             return fs.copy(path.resolve(__dirname, 'template'), targetDir);
         })
         .then(() => {
-            console.log();
-            console.log();
-            console.log(`🙌🏻  Your project is ready and is waiting for you over here: ${targetDir}`);
-            console.log();
+            log();
+            log();
+            log(`🙌🏻  Your project is ready and is waiting for you over here: ${targetDir}`);
+            log();
             spinner.stop();
+        })
+        .catch(e => {
+            log(e);
         });
 };
 
@@ -248,20 +255,20 @@ const isSafeToCreateProjectIn = (dir, name) => {
         '.hgignore',
         '.hgcheck',
     ];
-    console.log();
+    log();
 
     const conflicts = fs.readdirSync(dir).filter(file => !validFiles.includes(file));
     if (conflicts.length < 1) {
         return true;
     }
 
-    console.log(`The directory ${chalk.green(name)} contains files that could conflict:`);
-    console.log();
+    log(`The directory ${chalk.green(name)} contains files that could conflict:`);
+    log();
     for (const file of conflicts) {
-        console.log(`  ${file}`);
+        log(`  ${file}`);
     }
-    console.log();
-    console.log('Either try using a new directory name, or remove the files listed above.');
+    log();
+    log('Either try using a new directory name, or remove the files listed above.');
 
     return false;
 };
