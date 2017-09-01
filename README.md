@@ -9,18 +9,18 @@
   <a href="https://www.npmjs.com/package/@researchgate/node-package-blueprint"><img alt="NPM version" src="https://img.shields.io/npm/v/@researchgate/node-package-blueprint.svg"></a>
 </p>
 
-Simplify the creation and open sourcing of front-end projects:
+Simplify and standardize the creation and open sourcing of frontend projects. 
 
-- **👩‍💻&nbsp;&nbsp;Start From CLI:** generate the perfect starting blueprint for your new project
-- **📐&nbsp;&nbsp;Project Layout**: follow a clear and pre-defined project structure to ease the way to open sourcing
-- **🔧&nbsp;&nbsp;Integrated Tooling**: conciously chosen set of tools, configured and accessible via npm/yarn scripts
+- **👩‍💻&nbsp;&nbsp;Start From CLI:** create a new project with one single command
+- **📐&nbsp;&nbsp;Project Layout**: follow a clear and pre-defined project structure to make open sourcing easy
+- **🔧&nbsp;&nbsp;Integrated Tooling**: conscious choice of tools, configured and accessible via npm/yarn scripts
 - **🎡&nbsp;&nbsp;Automated tasks**: from commit message checking to changelog generation for releases
 
-We want to make the process of open source projects at [ResearchGate](https://github.com/researchgate) simple, and conventional.
+We know that the process of open sourcing projects can sometimes be confusing. And figuring out how to start and knowing what to include can be daunting. 
 
-When we create a new project, there are a lot of open questions around on how to best structure, document, and which tools to use.
+That's why we decided to standardize the process of open sourcing at ResearchGate so that your experience with open sourcing is easy and enjoyable. 
 
-This project provides the guidelines that clarify and facilitate this process.
+With this project, we aim to answer your open questions and facilitate this process by providing clear guidelines on how to structure and document your projects, and which tools you should use. 
 
 ## Getting started
 
@@ -49,11 +49,11 @@ Once you're ready to release a new version use:
 yarn release
 ```
 
-This script will calculate the version number based on your commit history – make sure to follow the [conventional commits](conventionalcommits.org) guidelines. The [CHANGELOG.md](./CHANGELOG.md) file is automatically updated with the relevant changes.
+This script will calculate the version number based on your commit history – always make sure you follow the [conventional commits](conventionalcommits.org) guidelines we've outlined. The [CHANGELOG.md](./CHANGELOG.md) file is automatically updated with the relevant changes.
 
-If it's your first release, you probably do not want to bump a new version into the history.
+If it's your first release, yit's probably not a good idea to bump a new version into the history.
 
-In such cases, use the `--first-release` flag:
+For these cases, use the `--first-release` flag:
 
 ```
 yarn release -- --first-release
