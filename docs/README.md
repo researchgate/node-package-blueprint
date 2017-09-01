@@ -1,3 +1,5 @@
+# Node Blueprint Documentation
+
 The `docs/` folder contains all the documentation necessary for this project.
 
 ## Documentation basics
