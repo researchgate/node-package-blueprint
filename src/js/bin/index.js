@@ -14,6 +14,7 @@ let directoryName;
 
 // Files to be ignored when syncing the project directory
 const ignoreFiles = [
+    'package.json',
     '.git',
     'template',
     'AUTHORS',
@@ -55,11 +56,19 @@ if (typeof directoryName === 'undefined') {
     process.exit(1);
 }
 
-console.log('👋🏻  Hi! You ready to create a new project?');
-console.log('');
-console.log("Just answer a couple of questions and you'll be ready to go");
-console.log('');
-console.log('');
+const run = () => {
+    const targetDir = path.resolve(directoryName);
+    fs.ensureDirSync(directoryName);
+
+    if (!isSafeToCreateProjectIn(targetDir, directoryName)) {
+        process.exit(1);
+    }
+
+    console.log();
+    console.log();
+    console.log('👋🏻  Hi! You ready to create a new project?');
+    promptPackageJson();
+};
 
 const prompt = question =>
     new Promise((resolve, reject) => {
@@ -77,29 +86,48 @@ const promptForPackageJson = (key, question) =>
         });
     });
 
-promptForPackageJson('name', 'package name:')
-    .then(name => {
-        if (!isNameValid(name)) {
-            process.exit(1);
+const promptPackageJson = () => {
+    console.log();
+    console.log("Just answer a couple of questions and you'll be ready to go");
+    console.log();
+
+    promptForPackageJson('name', 'package name:')
+        .then(name => {
+            if (!isNameValid(name)) {
+                process.exit(1);
+            }
+            return promptForPackageJson('version', 'version:');
+        })
+        .then(version => {
+            if (!isVersionValid(version)) {
+                process.exit(1);
+            }
+            return promptForPackageJson('description', 'description:');
+        })
+        .then(() => {
+            return promptForPackageJson('author', 'author:');
+        })
+        .then(() => {
+            return promptForPackageJson('keywords', 'keywords:');
+        })
+        .then(keywords => {
+            packageConfig.keywords = keywords ? keywords.split(/[\s,]+/) : '';
+            confirmProjectCreation(directoryName, packageConfig);
+        });
+};
+
+const confirmProjectCreation = (directoryName, packageConfig) => {
+    const question = `${JSON.stringify(packageConfig, null, 2)}\n\nIs that okay? ${chalk.grey('yes')}`;
+
+    rl.question(question, answer => {
+        if (answer) {
+            promptPackageJson();
+        } else {
+            createProject(directoryName, packageConfig);
+            rl.close();
         }
-        return promptForPackageJson('version', 'version:');
-    })
-    .then(version => {
-        if (!isVersionValid(version)) {
-            process.exit(1);
-        }
-        return promptForPackageJson('description', 'description:');
-    })
-    .then(() => {
-        return promptForPackageJson('author', 'author:');
-    })
-    .then(() => {
-        return promptForPackageJson('keywords', 'keywords');
-    })
-    .then(() => {
-        rl.close();
-        createProject(directoryName, packageConfig);
     });
+};
 
 const printValidationResults = results => {
     if (typeof results !== 'undefined') {
@@ -123,12 +151,6 @@ const createProject = (name, config) => {
     const sourceDir = path.resolve(__dirname, '../../../');
     const appName = path.basename(targetDir);
 
-    fs.ensureDirSync(name);
-
-    if (!isSafeToCreateProjectIn(targetDir, name)) {
-        process.exit(1);
-    }
-
     console.log();
     console.log('👍🏻  Roger that.');
     console.log();
@@ -137,12 +159,21 @@ const createProject = (name, config) => {
     spinner.setSpinnerString('⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏');
     spinner.start();
 
+    const newPackageJson = Object.assign({}, packageJson, packageConfig);
+
+    ignorePackageConfig.forEach(ignore => {
+        delete newPackageJson[ignore];
+    });
+
     fs
         .copy(`${sourceDir}`, targetDir, {
             filter: (src, dest) => {
                 const relativePath = path.relative(sourceDir, src);
                 return !shouldBeIgnored(relativePath);
             },
+        })
+        .then(() => {
+            return fs.outputFile(path.join(targetDir, 'package.json'), JSON.stringify(newPackageJson, null, 2));
         })
         .then(() => timeout())
         .then(() => {
@@ -220,3 +251,5 @@ const isSafeToCreateProjectIn = (dir, name) => {
 
     return false;
 };
+
+run();
