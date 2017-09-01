@@ -29,6 +29,7 @@ const ignoreFiles = [
     'lib',
     'dist',
     'src/js/bin',
+    'docs',
 ];
 
 // Default values for package.json
