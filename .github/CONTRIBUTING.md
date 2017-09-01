@@ -6,6 +6,8 @@ Thanks for taking the time to contribute!
 
 [Code of Conduct](#code-of-conduct)
 
+[Contribution prerequisites](#contribution-prerequisites)
+
 [Project Setup](#project-setup)
   * [How to run the project](#how-to-run)
   * [How to run tests](#how-to-test)
@@ -25,44 +27,95 @@ Thanks for taking the time to contribute!
 This project and everyone contributing to it adheres to the [ResearchGate Code of Conduct](CODE_OF_CONDUCT.md).
 By participating you are expected to uphold this code. Please report any behavior you find unacceptable to [researchgate@github.com](mailto:researchgate@github.com).
 
+## Contribution prerequisites
+
+Before you start your work, make sure that you:
+
+* have `node` installed at @TODO
+* have `npm` installed at @TODO
+* are familiar with `git`
+* are familiar with [conventional commits](conventionalcommits.org)
+* have read and agree to abide by the [ResearchGate Code of Conduct](CODE_OF_CONDUCT.md)
+
 ## Project setup
 
-### How to run the project
+### How to run the project @TODO
 
-## Release
-To release a new version of the project.
+Install Node Package Blueprint as a global npm package:
 
-```yarn release```
+```
+npm install -g @researchgate/node-package-blueprint
+```
 
-A new version will be calculated based on your commit history – make sure you follow [conventional commit message guidelines](https://github.com/conventional-changelog/standard-version#commit-message-convention-at-a-glance).
-Please be aware that the CHANGELOG.md will be updated automatically.
+Now create a new project with the CLI tool:
 
-If, for your first release, you don't want your version to be bumped,use the `--first-release` flag.
+```
+node-package-blueprint my-project
+cd my-project/
+```
 
-```yarn release -- --first-release```
+Install the dependencies with:
 
-## Publish
+```
+yarn install
+```
 
-After creating a release, you probably want to publish your updates to npm. To do this, run
+When all dependencies get installed successfully there is a variety of commands at your disposal:
 
-```git push --follow-tags origin master; npm publish```
+* `yarn build` - runs a full build of all source files, binaries and complied bundles
+* `yarn watch` - runs a watcher that makes sure all changes and builds are noticed
 
-Note: When you publish for the first time, make sure you include `access` flag to the command:
+For the full list, please refer to [Integrated Tooling](./docs/docs/integrated-tooling.md)
 
-```git push --follow-tags origin master; npm publish --access public```
+Once you're ready to release a new version use:
+
+* `yarn release` - this will calculate the version number based on your commit history – make sure to follow the [conventional commits](conventionalcommits.org) guidelines. The [CHANGELOG.md](./CHANGELOG.md) file is automatically updated with the relevant changes.
+
+If it's your first release, you probably do not want to bump a new version into the history.
+If that is the case, please use the `--first-release` flag:
+
+```
+yarn release -- --first-release
+```
+
+### How to run tests
+
+This project uses [jest](http://facebook.github.io/jest/) for JavaScript testing.
+
+To run tests, execute:
+
+```
+yarn test
+```
+
+Since coverage is not collected by default when running yarn test, run:
+
+```
+yarn coverage
+```
+
+To run linters use:
+
+```
+yarn lint
+```
 
 ## How you can contribute
 
 ### Reporting bugs
 
 This section guides you through the steps to follow when you submit a bug report for a ResearchGate project.
+
 Following these guidelines makes it easy for the maintainers and community to understand your report, reproduce the behavior, and find related reports.
 
-Before creating a bug report, please check Open Issues as you may find that there is already an issue open for the bug you’vefound. When you create a bug report, be sure to include as much detail as possible and fill out [the required template](ISSUE_TEMPLATE.md), the information it asks for helps us resolve issues faster.
+Before creating a bug report, please check Open Issues as you may find that there is already an issue open for the bug you’ve found. When you create a bug report, be sure to include as much detail as possible and fill out [the required template](ISSUE_TEMPLATE.md), the information it asks for helps us resolve issues faster.
+
+After you have submitted the issue, we'll try to get back to you as soon as possible.
 
 ### Suggesting enhancements
 
 This section guides you through submitting a feature suggestion.
+
 All enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/) and, when approved by a core team member or project maintainer, are given the green light to then be turned into a Pull Request.
 For the best possible experience, please provide us with:
 
@@ -72,10 +125,13 @@ For the best possible experience, please provide us with:
 * **Explanation of why this feature would be useful** to this project
 * **Your development environment** and context for creating the feature
 
+After you have submitted your Pull Request, we'll try to get back to you as soon as possible.
+
 ### Writing documentation
 
 All great projects require good documentation.
 There is __always__ room for (better) docs, so why not to contribute to the project by enhancing them?
+Please do so via Pull Request.
 
 ### Your first code contribution
 
