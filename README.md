@@ -1,12 +1,12 @@
-# ![Node Blueprint](.github/logo.svg)
+<p align="center">
+  <img alt="Node Blueprint" src=".github/logo.svg" width="888">
+</p>
 
-<div style="text-align:center;margin-top:1.4em;margin-bottom:2.1em;">
-
-[![Build Status](https://travis-ci.org/researchgate/node-package-blueprint.svg?branch=master)](https://travis-ci.org/researchgate/node-package-blueprint)
-[![Codecov](https://img.shields.io/codecov/c/github/researchgate/node-package-blueprint.svg)](https://codecov.io/gh/researchgate/node-package-blueprint)
-[![Dependency Status](https://dependencyci.com/github/researchgate/node-package-blueprint/badge)](https://dependencyci.com/github/researchgate/node-package-blueprint)
-
-</div>
+<p align="center">
+  <a href="https://travis-ci.org/researchgate/node-package-blueprint"><img alt="Build Status" src="https://travis-ci.org/researchgate/node-package-blueprint.svg?branch=master"></a>
+  <a href="https://codecov.io/gh/researchgate/node-package-blueprint"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/researchgate/node-package-blueprint.svg"></a>
+  <a href="https://dependencyci.com/github/researchgate/node-package-blueprint"><img alt="Dependency Status" src="https://dependencyci.com/github/researchgate/node-package-blueprint/badge"></a>
+</p>
 
 Simplify the creation and open sourcing of front-end projects:
 
