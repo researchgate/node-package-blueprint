@@ -5,18 +5,18 @@
   "main": "lib/js/index.js",
   "module": "lib/es/index.js",
   "bin": "lib/js/bin/index.js",
-  "files": [
-    "lib",
-    "dist"
-  ],
+  "files": ["lib", "dist"],
   "scripts": {
     "build": "run-s build:*",
     "build:dist": "run-s build:dist:*",
-    "build:dist:css": "node-sass --include-path ./node_modules ./src/scss --output ./dist/css",
+    "build:dist:css":
+      "node-sass --include-path ./node_modules ./src/scss --output ./dist/css",
     "build:dist:postcss": "postcss ./dist/css/*.css -r -c .postcss.config.js",
     "build:lib": "run-s build:lib:*",
-    "build:lib:js": "cross-env BABEL_ENV=production BABEL_OUTPUT=cjs babel ./src/js --out-dir ./lib/js --ignore __tests__ --copy-files",
-    "build:lib:es": "cross-env BABEL_ENV=production BABEL_OUTPUT=esm babel ./src/js --out-dir ./lib/es --ignore __tests__ --copy-files",
+    "build:lib:js":
+      "cross-env BABEL_ENV=production BABEL_OUTPUT=cjs babel ./src/js --out-dir ./lib/js --ignore __tests__ --copy-files",
+    "build:lib:es":
+      "cross-env BABEL_ENV=production BABEL_OUTPUT=esm babel ./src/js --out-dir ./lib/es --ignore __tests__ --copy-files",
     "build:lib:scss": "cpx \"./src/scss/**/*.scss\" ./lib/scss",
     "clear": "run-s clear:*",
     "clear:dist": "rimraf ./dist",
@@ -25,7 +25,8 @@
     "format": "eslint --fix src/",
     "generate": "echo generate",
     "lint": "run-s lint:*",
-    "lint:scss": "stylelint --config .stylelintrc.js --syntax scss ./src/scss/**/*.scss",
+    "lint:scss":
+      "stylelint --config .stylelintrc.js --syntax scss ./src/scss/**/*.scss",
     "lint:json": "jsonlint-cli {**/*.json,.*rc}",
     "lint:js": "eslint src/",
     "commitmsg": "validate-commit-msg",
@@ -35,7 +36,8 @@
     "release": "standard-version",
     "test": "jest",
     "watch": "run-p watch:*",
-    "watch:scss": "npm run build:dist:css -- --watch & npm run build:dist:postcss -- --poll=10 -w & npm run build:lib:scss -- --watch",
+    "watch:scss":
+      "npm run build:dist:css -- --watch & npm run build:dist:postcss -- --poll=10 -w & npm run build:lib:scss -- --watch",
     "watch:js": "yarn build:lib:js -- --watch",
     "watch:es": "yarn build:lib:es -- --watch"
   },
@@ -43,11 +45,7 @@
     "type": "git",
     "url": "git+https://github.com/researchgate/node-package-blueprint.git"
   },
-  "keywords": [
-    "node",
-    "npm",
-    "scaffold"
-  ],
+  "keywords": ["node", "npm", "scaffold"],
   "author": "Roland Loesslein <roland.loesslein@researchgate.net>",
   "license": "MIT",
   "bugs": {
@@ -77,8 +75,7 @@
     "stylelint": "^8.0.0",
     "stylelint-order": "^0.6.0",
     "stylelint-scss": "^2.1.0",
-    "validate-commit-msg": "^2.14.0",
-    "validate-npm-package-name": "^3.0.0"
+    "validate-commit-msg": "^2.14.0"
   },
   "dependencies": {
     "@researchgate/babel-preset-rg": "^1.0.1",
@@ -88,6 +85,7 @@
     "fs-extra": "^4.0.1",
     "ncp": "^2.0.0",
     "normalize-scss": "^7.0.0",
-    "semver": "^5.4.1"
+    "semver": "^5.4.1",
+    "validate-npm-package-name": "^3.0.0"
   }
 }
