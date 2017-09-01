@@ -1,33 +1,45 @@
-# {{project_name}}
+<p align="center">
+  <img alt="{{project_name}}" src="raw.githubusercontent.com/researchgate/node-package-blueprint/master/.github/logo.svg" width="888">
+</p>
 
-[![Build Status](https://travis-ci.org/researchgate/node-package-blueprint.svg?branch=master)](https://travis-ci.org/researchgate/node-package-blueprint)
-[![Codecov](https://img.shields.io/codecov/c/github/researchgate/node-package-blueprint.svg)](https://codecov.io/gh/researchgate/node-package-blueprint)
-[![Dependency Status](https://dependencyci.com/github/researchgate/node-package-blueprint/badge)](https://dependencyci.com/github/researchgate/node-package-blueprint)
+<p align="center">
+  <a href="https://travis-ci.org/researchgate/node-package-blueprint"><img alt="Build Status" src="https://travis-ci.org/researchgate/node-package-blueprint.svg?branch=master"></a>
+  <a href="https://codecov.io/gh/researchgate/node-package-blueprint"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/researchgate/node-package-blueprint.svg"></a>
+  <a href="https://dependencyci.com/github/researchgate/node-package-blueprint"><img alt="Dependency Status" src="https://dependencyci.com/github/researchgate/node-package-blueprint/badge"></a>
+  <a href="https://www.npmjs.com/package/@researchgate/node-package-blueprint"><img alt="NPM version" src="https://img.shields.io/npm/v/@researchgate/node-package-blueprint.svg"></a>
+</p>
 
-#### TODOs:
-- Write an introductory sentence
-- Write a list of features and highlights
-- Explain what you can do with it and why it is important
-- Explain the movivation behind it: why does this project exists? What does it do?
+## TODOs:
+
+First, introduce your project to your audience:
+
+- **What is your project about?** Write a short description (1-2 sentences)
+- **Why is your project important?** Outline the goal of your project and it’s features
+- **How can people use your project?** Explain who should use this project and how it can help them
 
 ## Getting started
 
-#### TODOs:
-- Explain in a minimalistic way the necessary things to know in order to get started
-- Show a snippet of code as a concise example
-- Describe how the installation works
-- Describe the usage (optional), or create a Usage section and/or link to one.
+Tell people everything they need to know about how to install, use, and test the code:
 
-## Documentation (optional section)
+- Give concise instructions on how the installation works - it's always a good idea to include code snippets or screenshots
+- Describe the usage, or create a usage section and/or link to one.
 
-#### TODOs:
-- Explain this project's dependencies (optional)
-- Explain this project's configuration (optional)
-- Link to the Guides section (optional)
-- Link to the API reference (optional)
-- Link to the FAQs (optional)
-- Link to the Tutorial (optional)
+## Documentation
+
+Here are some things to include with your documentation if necessary (all are optional):
+
+- Explain this project's configuration or additional steps
+- Write about or link to the Guides section in the docs
+- Write about  or link to the API reference in the docs
+- Write about  or link to the FAQs in the docs
+- Write about  or link to the Tutorial in the docs
 
 ## Contributing
 
-We welcome your ideas and contributions. For more information about PRs and issues, see our [Contribution Guidelines](.github/CONTRIBUTING.md). Also check out our [Code of Conduct](.github/CODE_OF_CONDUCT.md).
+We'd love your help on creating {{project_name}}!
+
+Before you do, please read our [Code of Conduct](.github/CODE_OF_CONDUCT.md) so you know what we expect when you contribute to our projects.
+
+Our [Contributing Guide](.github/CONTRIBUTING.md) tells you about our development process and what we're looking for, gives you instructions on how to issue bugs and suggest features, and explains how you can build and test your changes.
+
+**Haven't contributed to an open source project before?** No problem! [Contributing Guide](.github/CONTRIBUTING.md) has you covered as well.
