@@ -1,4 +1,6 @@
 # node-package-blueprint
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/researchgate/node-package-blueprint.svg)](https://greenkeeper.io/)
 Blueprint for scaffolding new node packages
 
 [![Build Status](https://travis-ci.org/researchgate/node-package-blueprint.svg?branch=master)](https://travis-ci.org/researchgate/node-package-blueprint)
