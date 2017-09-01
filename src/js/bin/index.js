@@ -169,11 +169,6 @@ const createProject = (name, config) => {
     spinner.setSpinnerString('⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏');
     spinner.start();
 
-    const newPackageJson = Object.assign({}, packageJson, packageConfig);
-
-    ignorePackageConfig.forEach(ignore => {
-        delete newPackageJson[ignore];
-    });
     fs
         .emptyDir('./tmp')
         .then(() => {
@@ -192,6 +187,12 @@ const createProject = (name, config) => {
             });
         })
         .then(() => {
+            const gitPackageJson = fs.readJsonSync(path.join('./tmp', 'package.json'));
+            const newPackageJson = Object.assign({}, gitPackageJson, packageConfig);
+
+            ignorePackageConfig.forEach(ignore => {
+                delete newPackageJson[ignore];
+            });
             return fs.outputFile(path.join(targetDir, 'package.json'), JSON.stringify(newPackageJson, null, 2));
         })
         .then(() => timeout())
