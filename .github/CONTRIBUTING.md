@@ -9,8 +9,8 @@ Thanks for taking the time to contribute!
 [Contribution prerequisites](#contribution-prerequisites)
 
 [Project Setup](#project-setup)
-  * [How to run the project](#how-to-run)
-  * [How to run tests](#how-to-test)
+  * [How to run the project](#how-to-run-the-project)
+  * [How to run tests](#how-to-run-tests)
 
 [How can you contribute](#how-can-you-contribute)
   * [Reporting bugs](#reporting-bugs)
@@ -31,15 +31,16 @@ By participating you are expected to uphold this code. Please report any behavio
 
 Before you start your work, make sure that you:
 
-* have `node` installed at @TODO
-* have `npm` installed at @TODO
+* have `node` installed at v6.10.0
+* have `npm` installed at 5.3.0
+* have `yarn` installed at v0.21.3
 * are familiar with `git`
 * are familiar with [conventional commits](conventionalcommits.org)
 * have read and agree to abide by the [ResearchGate Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## Project setup
 
-### How to run the project @TODO
+### How to run the project
 
 Install Node Package Blueprint as a global npm package:
 
@@ -66,17 +67,6 @@ When all dependencies get installed successfully there is a variety of commands 
 * `yarn watch` - runs a watcher that makes sure all changes and builds are noticed
 
 For the full list, please refer to [Integrated Tooling](./docs/docs/integrated-tooling.md)
-
-Once you're ready to release a new version use:
-
-* `yarn release` - this will calculate the version number based on your commit history – make sure to follow the [conventional commits](conventionalcommits.org) guidelines. The [CHANGELOG.md](./CHANGELOG.md) file is automatically updated with the relevant changes.
-
-If it's your first release, you probably do not want to bump a new version into the history.
-If that is the case, please use the `--first-release` flag:
-
-```
-yarn release -- --first-release
-```
 
 ### How to run tests
 
