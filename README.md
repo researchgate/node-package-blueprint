@@ -51,9 +51,7 @@ yarn release
 
 This script will calculate the version number based on your commit history – always make sure you follow the [conventional commits](conventionalcommits.org) guidelines we've outlined. The [CHANGELOG.md](./CHANGELOG.md) file is automatically updated with the relevant changes.
 
-If it's your first release, yit's probably not a good idea to bump a new version into the history.
-
-For these cases, use the `--first-release` flag:
+If it's your first release, it's probably not a good idea to bump a new version into the history. For these cases, use the `--first-release` flag:
 
 ```
 yarn release -- --first-release
