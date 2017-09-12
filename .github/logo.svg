@@ -1,9 +1,9 @@
 <svg width="888" height="130" viewBox="0 0 888 130" xmlns="http://www.w3.org/2000/svg">
     <title>Node Package Blueprint Logo</title>
     <defs>
-        <linearGradient x1="0%" y1="0%" y2="100%" id="a">
-        <stop stop-color="#04A39E" offset="0%"/>
-        <stop stop-color="#0080FF" offset="100%"/>
+        <linearGradient x1="2.66462054%" y1="2.66462054%" x2="98.7293791%" y2="98.7293791%" id="a">
+        <stop stop-color="#FFC14D" offset="0%"/>
+        <stop stop-color="#08CCBB" offset="100%"/>
         </linearGradient>
     </defs>
     <g fill="none" fill-rule="evenodd">
