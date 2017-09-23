@@ -21,6 +21,6 @@ indent_size = 4
 [*.scss]
 indent_size = 2
 
-[{*.json,.travis.yml,.babelrc,.eslintrc,.jsonlintrc,.prettierrc}]
+[{*.json,.travis.yml,.*rc}]
 indent_style = space
 indent_size = 2
