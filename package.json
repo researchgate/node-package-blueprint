@@ -21,7 +21,7 @@
     "clear": "run-s clear:*",
     "clear:dist": "rimraf ./dist",
     "clear:lib": "rimraf ./lib",
-    "commitmsg": "validate-commit-msg",
+    "commitmsg": "commitlint -x @commitlint/config-angular --edit",
     "coverage": "yarn test -- --coverage",
     "create-github-release": "conventional-github-releaser -p angular",
     "format": "eslint --fix src/js/",
@@ -30,7 +30,7 @@
     "lint:scss": "stylelint --syntax scss ./src/scss/**/*.scss",
     "lint:json": "jsonlint-cli {**/*.json,.*rc}",
     "lint:js": "eslint src/js/",
-    "precommit": "yarn lint-staged && yarn test",
+    "precommit": "echo $PATH && yarn lint-staged && yarn test",
     "prepare": "run-s clear generate build",
     "prepublishOnly": "run-s test",
     "release": "standard-version",
@@ -68,6 +68,8 @@
   },
   "homepage": "https://github.com/researchgate/node-package-blueprint#readme",
   "devDependencies": {
+    "@commitlint/cli": "^4.2.2",
+    "@commitlint/config-angular": "^4.2.1",
     "@researchgate/babel-preset-rg": "^1.0.1",
     "autoprefixer": "^7.1.3",
     "babel-cli": "^6.26.0",
@@ -92,8 +94,7 @@
     "standard-version": "^4.2.0",
     "stylelint": "^8.0.0",
     "stylelint-order": "^0.7.0",
-    "stylelint-scss": "^2.1.0",
-    "validate-commit-msg": "^2.14.0"
+    "stylelint-scss": "^2.1.0"
   },
   "dependencies": {
     "chalk": "^2.1.0",
