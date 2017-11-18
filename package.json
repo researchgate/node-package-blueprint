@@ -68,7 +68,7 @@
   },
   "homepage": "https://github.com/researchgate/node-package-blueprint#readme",
   "devDependencies": {
-    "@commitlint/cli": "^4.2.2",
+    "@commitlint/cli": "^5.0.0",
     "@commitlint/config-angular": "^4.2.1",
     "@researchgate/babel-preset-rg": "^1.0.1",
     "autoprefixer": "^7.1.3",
