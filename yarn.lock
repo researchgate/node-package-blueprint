@@ -13,9 +13,15 @@
     lodash "^4.17.4"
     meow "^3.7.0"
 
-"@commitlint/config-angular@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-angular/-/config-angular-4.2.1.tgz#95b8b9975591047308afb109bd63a4298616eb5b"
+"@commitlint/config-angular-type-enum@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-angular-type-enum/-/config-angular-type-enum-5.0.0.tgz#3d7b52b3b44178a61a2709a4a3afcfd2ee565f78"
+
+"@commitlint/config-angular@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-angular/-/config-angular-5.0.0.tgz#3fb80fb7697369a444e18dd13b78582d5431d587"
+  dependencies:
+    "@commitlint/config-angular-type-enum" "^5.0.0"
 
 "@commitlint/core@^4.2.2":
   version "4.2.2"
@@ -3557,7 +3563,7 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lint-staged@5.0.0:
+lint-staged@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-5.0.0.tgz#f1c670e03e2fdf3f3d0eb81f72d3bcf658770e54"
   dependencies:
