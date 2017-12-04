@@ -93,7 +93,7 @@
     "rimraf": "^2.6.1",
     "standard-version": "^4.2.0",
     "stylelint": "^8.0.0",
-    "stylelint-order": "^0.7.0",
+    "stylelint-order": "^0.8.0",
     "stylelint-scss": "^2.1.0"
   },
   "dependencies": {
