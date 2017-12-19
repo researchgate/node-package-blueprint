@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": "@researchgate/eslint-config-rg-node-babel",
+  "parser": "babel-eslint",
+  "overrides": [
+    {
+      "files": "index.js",
+      "rules": {
+        "node/shebang": "off",
+        "no-console": "off"
+      }
+    }
+  ]
+}

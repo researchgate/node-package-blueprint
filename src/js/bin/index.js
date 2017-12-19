@@ -1,21 +1,17 @@
 #!/usr/bin/env node
-
-import packageJson from '../../../package.json';
 import validateProjectName from 'validate-npm-package-name';
 import semver from 'semver';
-import commander from 'commander';
+import yargs from 'yargs';
 import readline from 'readline';
 import chalk from 'chalk';
 import path from 'path';
 import fs from 'fs-extra';
 import { Spinner } from 'cli-spinner';
 import git from 'nodegit';
-import { ncp } from 'ncp';
 
 const GIT_URL = 'https://github.com/researchgate/node-package-blueprint.git';
 
 const log = console.log;
-let directoryName;
 
 // Files to be ignored when syncing the project directory
 const ignoreFiles = [
@@ -47,108 +43,41 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-const program = new commander.Command()
-    .version(packageJson.version)
-    .arguments('<directory>')
-    .usage(`${chalk.green('<directory>')} [options]`)
-    .action(function(directory) {
-        packageConfig.name = directory.split('/').pop();
-        directoryName = directory;
-    })
-    .parse(process.argv);
+const argv = yargs.command('* <directory>', '').argv;
+packageConfig.name = argv.directory.split('/').pop();
+const directoryName = argv.directory;
 
 if (typeof directoryName === 'undefined') {
     log('Please specify a directory for your new project');
     process.exit(1);
 }
 
-// Main run file
-const run = () => {
-    const targetDir = path.resolve(directoryName);
-    fs.ensureDirSync(directoryName);
-
-    if (!isSafeToCreateProjectIn(targetDir, directoryName)) {
-        process.exit(1);
-    }
-
-    log();
-    log('👋🏻  Hi! You ready to create a new project?');
-    promptPackageJson();
-};
-
-const prompt = question =>
-    new Promise((resolve, reject) => {
-        rl.question(question, answer => {
+const prompt = (question) =>
+    new Promise((resolve) => {
+        rl.question(question, (answer) => {
             resolve(answer);
         });
     });
 
 const promptForPackageJson = (key, question) =>
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
         const defaultConfig = packageConfig[key] ? chalk.grey(` ${packageConfig[key]}`) : '';
-        prompt(`${question}${defaultConfig} `).then(answer => {
+        prompt(`${question}${defaultConfig} `).then((answer) => {
             packageConfig[key] = answer || packageConfig[key];
             resolve(packageConfig[key]);
         });
     });
 
-const promptPackageJson = () => {
-    log();
-    log("Just answer a couple of questions and you'll be ready to go");
-    log();
-
-    promptForPackageJson('name', 'package name:')
-        .then(name => {
-            if (!isNameValid(name)) {
-                process.exit(1);
-            }
-            return promptForPackageJson('version', 'version:');
-        })
-        .then(version => {
-            if (!isVersionValid(version)) {
-                process.exit(1);
-            }
-            return promptForPackageJson('description', 'description:');
-        })
-        .then(() => {
-            return promptForPackageJson('author', 'author:');
-        })
-        .then(() => {
-            return promptForPackageJson('keywords', 'keywords:');
-        })
-        .then(keywords => {
-            packageConfig.keywords = keywords ? keywords.split(/[\s,]+/) : '';
-            confirmProjectCreation(directoryName, packageConfig);
-        })
-        .catch(e => {
-            console.log(e);
-        });
-};
-
-const confirmProjectCreation = (directoryName, packageConfig) => {
-    log();
-    const question = `${JSON.stringify(packageConfig, null, 2)}\n\nIs that okay? ${chalk.grey('yes')}`;
-
-    rl.question(question, answer => {
-        if (answer) {
-            promptPackageJson();
-        } else {
-            createProject(directoryName, packageConfig);
-            rl.close();
-        }
-    });
-};
-
-const printValidationResults = results => {
+const printValidationResults = (results) => {
     if (typeof results !== 'undefined') {
-        results.forEach(error => {
+        results.forEach((error) => {
             console.error(chalk.red(`  *  ${error}`));
         });
     }
 };
 
-const shouldBeIgnored = src => {
-    for (var i = 0; i < ignoreFiles.length; i++) {
+const shouldBeIgnored = (src) => {
+    for (let i = 0; i < ignoreFiles.length; i++) {
         if (src.indexOf(ignoreFiles[i]) === 0) {
             return true;
         }
@@ -156,10 +85,15 @@ const shouldBeIgnored = src => {
     return false;
 };
 
-const createProject = (name, config) => {
+const timeout = () =>
+    new Promise((resolve) => {
+        setTimeout(resolve, 1000);
+    });
+
+const createProject = (name) => {
     const targetDir = path.resolve(name);
-    const sourceDir = path.resolve(__dirname, '../../../');
-    const appName = path.basename(targetDir);
+    // const sourceDir = path.resolve(__dirname, '../../../');
+    // const appName = path.basename(targetDir);
 
     log();
     log('👍🏻  Roger that.');
@@ -174,13 +108,13 @@ const createProject = (name, config) => {
         .then(() => {
             log();
             log('🚚  Fetching project files from repository');
-            return git.Clone(GIT_URL, './tmp');
+            return git.Clone.clone(GIT_URL, './tmp');
         })
         .then(() => {
             log();
             log('📦  Prepare project');
             return fs.copy(`./tmp`, targetDir, {
-                filter: (src, dest) => {
+                filter: (src) => {
                     const relativePath = path.relative(`./tmp`, src);
                     return !shouldBeIgnored(relativePath);
                 },
@@ -190,7 +124,7 @@ const createProject = (name, config) => {
             const gitPackageJson = fs.readJsonSync(path.join('./tmp', 'package.json'));
             const newPackageJson = Object.assign({}, gitPackageJson, packageConfig);
 
-            ignorePackageConfig.forEach(ignore => {
+            ignorePackageConfig.forEach((ignore) => {
                 delete newPackageJson[ignore];
             });
             return fs.outputFile(path.join(targetDir, 'package.json'), JSON.stringify(newPackageJson, null, 2));
@@ -206,17 +140,12 @@ const createProject = (name, config) => {
             log();
             spinner.stop();
         })
-        .catch(e => {
+        .catch((e) => {
             log(e);
         });
 };
 
-const timeout = () =>
-    new Promise(resolve => {
-        setTimeout(resolve, 1000);
-    });
-
-const isNameValid = name => {
+const isNameValid = (name) => {
     const validationResult = validateProjectName(name);
     if (!validationResult.validForNewPackages) {
         console.error(
@@ -229,7 +158,7 @@ const isNameValid = name => {
     return true;
 };
 
-const isVersionValid = version => {
+const isVersionValid = (version) => {
     const validationResult = semver.valid(version);
 
     if (!validationResult) {
@@ -241,6 +170,53 @@ const isVersionValid = version => {
         return false;
     }
     return true;
+};
+
+const promptPackageJson = () => {
+    log();
+    log("Just answer a couple of questions and you'll be ready to go");
+    log();
+
+    promptForPackageJson('name', 'package name:')
+        .then((name) => {
+            if (!isNameValid(name)) {
+                process.exit(1);
+            }
+            return promptForPackageJson('version', 'version:');
+        })
+        .then((version) => {
+            if (!isVersionValid(version)) {
+                process.exit(1);
+            }
+            return promptForPackageJson('description', 'description:');
+        })
+        .then(() => {
+            return promptForPackageJson('author', 'author:');
+        })
+        .then(() => {
+            return promptForPackageJson('keywords', 'keywords:');
+        })
+        .then((keywords) => {
+            packageConfig.keywords = keywords ? keywords.split(/[\s,]+/) : '';
+            confirmProjectCreation(directoryName, packageConfig); // eslint-disable-line no-use-before-define
+        })
+        .catch((e) => {
+            console.log(e);
+        });
+};
+
+const confirmProjectCreation = (projectDirectoryName, config) => {
+    log();
+    const question = `${JSON.stringify(config, null, 2)}\n\nIs that okay? ${chalk.grey('yes')}`;
+
+    rl.question(question, (answer) => {
+        if (answer) {
+            promptPackageJson();
+        } else {
+            createProject(projectDirectoryName, config);
+            rl.close();
+        }
+    });
 };
 
 const isSafeToCreateProjectIn = (dir, name) => {
@@ -259,7 +235,7 @@ const isSafeToCreateProjectIn = (dir, name) => {
     ];
     log();
 
-    const conflicts = fs.readdirSync(dir).filter(file => !validFiles.includes(file));
+    const conflicts = fs.readdirSync(dir).filter((file) => !validFiles.includes(file));
     if (conflicts.length < 1) {
         return true;
     }
@@ -275,4 +251,16 @@ const isSafeToCreateProjectIn = (dir, name) => {
     return false;
 };
 
-run();
+// Main run file
+(() => {
+    const targetDir = path.resolve(directoryName);
+    fs.ensureDirSync(directoryName);
+
+    if (!isSafeToCreateProjectIn(targetDir, directoryName)) {
+        process.exit(1);
+    }
+
+    log();
+    log('👋🏻  Hi! You ready to create a new project?');
+    promptPackageJson();
+})();

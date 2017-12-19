@@ -1,3 +1,4 @@
+/* eslint-env jest */
 import salute from '../salute';
 
 test('the return salutes you', () => {
