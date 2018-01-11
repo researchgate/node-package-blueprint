@@ -74,7 +74,7 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.35",
     "@babel/core": "^7.0.0-beta.35",
-    "@commitlint/cli": "^5.2.5",
+    "@commitlint/cli": "^6.0.1",
     "@commitlint/config-angular": "^5.1.1",
     "@researchgate/babel-preset-rg": "^2.0.0-beta.1",
     "@researchgate/eslint-config-rg-node-babel": "^2.0.0",
