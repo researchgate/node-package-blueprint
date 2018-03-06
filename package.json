@@ -72,8 +72,8 @@
   },
   "homepage": "https://github.com/researchgate/node-package-blueprint#readme",
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.35",
-    "@babel/core": "^7.0.0-beta.35",
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.40",
     "@commitlint/cli": "^6.0.1",
     "@commitlint/config-angular": "^6.0.2",
     "@researchgate/babel-preset-rg": "^2.0.0-beta.1",
