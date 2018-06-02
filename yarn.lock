@@ -4830,7 +4830,11 @@ mute-stream@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
 
-nan@^2.3.0, nan@^2.3.2, nan@^2.9.2:
+nan@^2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
+
+nan@^2.3.0, nan@^2.3.2:
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.9.2.tgz#f564d75f5f8f36a6d9456cca7a6c4fe488ab7866"
 
@@ -4939,13 +4943,13 @@ nodegit-promise@~4.0.0:
   dependencies:
     asap "~2.0.3"
 
-nodegit@^0.21.0:
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/nodegit/-/nodegit-0.21.1.tgz#8f7876c45a30c39174e25089ef67cf72e6798dbe"
+nodegit@^0.22.1:
+  version "0.22.1"
+  resolved "https://registry.yarnpkg.com/nodegit/-/nodegit-0.22.1.tgz#a4b45797815631c9ed1a8d671a49738258a6d8a3"
   dependencies:
     fs-extra "~0.27.0"
     lodash "^4.13.1"
-    nan "^2.9.2"
+    nan "^2.10.0"
     node-gyp "^3.6.2"
     node-pre-gyp "~0.6.39"
     promisify-node "~0.3.0"
