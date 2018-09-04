@@ -79,7 +79,7 @@
     "@researchgate/babel-preset-rg": "^2.0.0-beta.1",
     "@researchgate/eslint-config-rg-node-babel": "^4.0.0",
     "@researchgate/eslint-config-rg-react": "^4.0.0",
-    "autoprefixer": "^8.0.0",
+    "autoprefixer": "^9.1.4",
     "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.0.0",
     "babel-jest": "^22.0.3",
