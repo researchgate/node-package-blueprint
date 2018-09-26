@@ -81,7 +81,7 @@
     "@researchgate/eslint-config-rg-react": "^4.0.0",
     "autoprefixer": "^8.0.0",
     "babel-core": "^7.0.0-0",
-    "babel-eslint": "^8.0.0",
+    "babel-eslint": "^10.0.0",
     "babel-jest": "^22.0.3",
     "conventional-github-releaser": "^2.0.0",
     "cpx": "^1.5.0",
