@@ -670,26 +670,25 @@
     babel-plugin-transform-react-remove-prop-types "^0.4.9"
     babel-preset-react-hmre "^1.1.1"
 
-"@researchgate/eslint-config-rg-base@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-base/-/eslint-config-rg-base-2.0.1.tgz#9d7d03bf095bfd00e57eb90a43343e5a3b77bce3"
-
 "@researchgate/eslint-config-rg-base@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-base/-/eslint-config-rg-base-4.0.0.tgz#5ba6c88fafc7c64f7f0fbd55e8be74dc63be235b"
 
+"@researchgate/eslint-config-rg-base@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-base/-/eslint-config-rg-base-5.0.1.tgz#47cd8a6b1e61c6c0d5846afcef6fb3eb9410f553"
 
-"@researchgate/eslint-config-rg-node-babel@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-node-babel/-/eslint-config-rg-node-babel-4.0.0.tgz#8d4975b4ab0a2225fefaf2041504cce8382a0c3e"
+"@researchgate/eslint-config-rg-node-babel@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-node-babel/-/eslint-config-rg-node-babel-5.0.1.tgz#7bec526afb3f236446c50fba38fd23ad6c04c20e"
   dependencies:
-    "@researchgate/eslint-config-rg-node" "^4.0.0"
+    "@researchgate/eslint-config-rg-node" "^5.0.1"
 
-"@researchgate/eslint-config-rg-node@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-node/-/eslint-config-rg-node-4.0.0.tgz#8e9dca2434a73dc78dfdd961a56c7efee79690ab"
+"@researchgate/eslint-config-rg-node@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-node/-/eslint-config-rg-node-5.0.1.tgz#1c15f7a14fe86346dad47b03d5eb5182d06b3401"
   dependencies:
-    "@researchgate/eslint-config-rg-base" "^4.0.0"
+    "@researchgate/eslint-config-rg-base" "^5.0.1"
 
 "@researchgate/eslint-config-rg-react@^4.0.0":
   version "4.0.0"
