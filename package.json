@@ -97,7 +97,7 @@
     "jest": "^22.0.3",
     "jsonlint-cli": "^1.0.1",
     "lint-staged": "^7.0.0",
-    "node-sass": "^4.5.3",
+    "node-sass": "4.9.3",
     "npm-run-all": "^4.1.1",
     "postcss-cli": "^5.0.0",
     "prettier": "^1.6.1",
