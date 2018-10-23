@@ -670,14 +670,9 @@
     babel-plugin-transform-react-remove-prop-types "^0.4.9"
     babel-preset-react-hmre "^1.1.1"
 
-"@researchgate/eslint-config-rg-base@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-base/-/eslint-config-rg-base-2.0.1.tgz#9d7d03bf095bfd00e57eb90a43343e5a3b77bce3"
-
 "@researchgate/eslint-config-rg-base@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-base/-/eslint-config-rg-base-4.0.0.tgz#5ba6c88fafc7c64f7f0fbd55e8be74dc63be235b"
-
 
 "@researchgate/eslint-config-rg-node-babel@^4.0.0":
   version "4.0.0"
@@ -2032,6 +2027,10 @@ cryptiles@3.x.x:
 css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
+
+cssesc@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-1.0.1.tgz#ef7bd8d0229ed6a3a7051ff7771265fe7330e0a8"
 
 cssnano@^3.10.0:
   version "3.10.0"
@@ -4560,6 +4559,10 @@ lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.4, lodash@^4.17.5, l
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
+lodash@^4.17.10:
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+
 log-symbols@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-1.0.2.tgz#376ff7b58ea3086a0f09facc74617eca501e1a18"
@@ -5662,11 +5665,19 @@ postcss-selector-parser@^2.0.0, postcss-selector-parser@^2.2.2:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss-selector-parser@^3.1.0, postcss-selector-parser@^3.1.1:
+postcss-selector-parser@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-3.1.1.tgz#4f875f4afb0c96573d5cf4d74011aee250a7e865"
   dependencies:
     dot-prop "^4.1.1"
+    indexes-of "^1.0.1"
+    uniq "^1.0.1"
+
+postcss-selector-parser@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-4.0.0.tgz#50c6570f40579036d8e63f23e6c0626fe5743527"
+  dependencies:
+    cssesc "^1.0.1"
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
@@ -6810,14 +6821,14 @@ stylelint-order@^0.8.0:
     postcss "^6.0.14"
     postcss-sorting "^3.1.0"
 
-stylelint-scss@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.0.0.tgz#15beb887117ccef20668a3f4728eb5be5fbda045"
+stylelint-scss@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.3.2.tgz#0ee3ec3758c54e9cf4805da82dcce4d514d9e095"
   dependencies:
-    lodash "^4.17.4"
+    lodash "^4.17.10"
     postcss-media-query-parser "^0.2.3"
     postcss-resolve-nested-selector "^0.1.1"
-    postcss-selector-parser "^3.1.1"
+    postcss-selector-parser "^4.0.0"
     postcss-value-parser "^3.3.0"
 
 stylelint@^9.0.0:
