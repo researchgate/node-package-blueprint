@@ -114,7 +114,7 @@
     "nodegit": "^0.21.0",
     "normalize-scss": "^7.0.0",
     "react": "^16.6.3",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.6.3",
     "semver": "^5.4.1",
     "validate-npm-package-name": "^3.0.0",
     "yargs": "^11.0.0"
