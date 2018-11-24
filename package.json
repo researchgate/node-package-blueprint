@@ -98,7 +98,7 @@
     "jsonlint-cli": "^1.0.1",
     "lint-staged": "^7.0.0",
     "node-sass": "^4.5.3",
-    "npm-run-all": "^4.1.1",
+    "npm-run-all": "^4.1.4",
     "postcss-cli": "^5.0.0",
     "prettier": "^1.6.1",
     "rimraf": "^2.6.1",
