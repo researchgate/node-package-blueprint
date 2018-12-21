@@ -105,7 +105,7 @@
     "standard-version": "^4.2.0",
     "stylelint": "^9.0.0",
     "stylelint-order": "^0.8.0",
-    "stylelint-scss": "^3.0.0"
+    "stylelint-scss": "^3.4.2"
   },
   "dependencies": {
     "chalk": "^2.1.0",
