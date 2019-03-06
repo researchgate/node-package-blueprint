@@ -117,7 +117,7 @@
     "react-dom": "^16.2.0",
     "semver": "^5.4.1",
     "validate-npm-package-name": "^3.0.0",
-    "yargs": "^11.0.0"
+    "yargs": "^13.2.2"
   },
   "jest": {
     "collectCoverageFrom": [
