@@ -89,7 +89,7 @@
     "cssnano": "^3.10.0",
     "eslint": "^4.5.0",
     "eslint-config-prettier": "^2.4.0",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-prettier": "^2.3.0",
     "eslint-plugin-react": "^7.5.1",
