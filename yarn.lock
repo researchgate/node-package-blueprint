@@ -536,15 +536,17 @@
     lodash.pick "4.4.0"
     meow "3.7.0"
 
-"@commitlint/config-angular-type-enum@^6.1.3":
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-angular-type-enum/-/config-angular-type-enum-6.1.3.tgz#f310dc1c24c8be9ed320c26291a8d18cfa11a45f"
+"@commitlint/config-angular-type-enum@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-angular-type-enum/-/config-angular-type-enum-7.6.0.tgz#9c3ffff18037b375a078eb704d118c7929968a49"
+  integrity sha512-oWGBo6P7gN07qNczMeviq2dxenq1LOnJcXlF4EFj3ifje3EoQMvZicM2gJaqBAZ3K7ZMHrG5l/njL61wKyyikg==
 
-"@commitlint/config-angular@^6.0.2":
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-angular/-/config-angular-6.1.3.tgz#68f46786fd3c3ef7808c4ced42e05721ead8f604"
+"@commitlint/config-angular@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-angular/-/config-angular-7.6.0.tgz#41d4ce9698d9ae5eb858a8a8e90bc64e1507f3a3"
+  integrity sha512-Rt0LxOTMxR0a6CWF3U5Y8zCMXz7vJqGrR0fBxjRw6fjndKehED78gbphiqKxjDaTJ4NDs259urR/BPhHCkYuAg==
   dependencies:
-    "@commitlint/config-angular-type-enum" "^6.1.3"
+    "@commitlint/config-angular-type-enum" "^7.6.0"
 
 "@commitlint/ensure@^6.1.3":
   version "6.1.3"
@@ -670,14 +672,9 @@
     babel-plugin-transform-react-remove-prop-types "^0.4.9"
     babel-preset-react-hmre "^1.1.1"
 
-"@researchgate/eslint-config-rg-base@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-base/-/eslint-config-rg-base-2.0.1.tgz#9d7d03bf095bfd00e57eb90a43343e5a3b77bce3"
-
 "@researchgate/eslint-config-rg-base@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@researchgate/eslint-config-rg-base/-/eslint-config-rg-base-4.0.0.tgz#5ba6c88fafc7c64f7f0fbd55e8be74dc63be235b"
-
 
 "@researchgate/eslint-config-rg-node-babel@^4.0.0":
   version "4.0.0"
