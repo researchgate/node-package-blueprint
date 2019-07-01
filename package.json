@@ -115,7 +115,7 @@
     "normalize-scss": "^7.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "semver": "^5.4.1",
+    "semver": "^6.2.0",
     "validate-npm-package-name": "^3.0.0",
     "yargs": "^11.0.0"
   },
